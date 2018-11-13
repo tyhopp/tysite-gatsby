@@ -1,0 +1,7 @@
+/* Style markdown coming from Contentful */
+
+#markdown a {
+	text-decoration: none;
+	border-bottom: 3px solid #ff7571;
+	color: #020836;
+}
