@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from '../utils/media'
-import Img from 'gatsby-image'
 import TextL from './textL'
 import TextM from './textM'
 import TextS from './textS'
@@ -14,13 +13,6 @@ const Card = props => {
 
 	return (
 		<Container to={post.slug} key={post.id}>
-			<Block width="100%">
-				<Img
-					sizes={post.previewImage.fluid}
-					alt={post.previewImage.title}
-					style={{ borderRadius: '7px 7px 0 0' }}
-				/>
-			</Block>
 			<Block padding="2em">
 				<TextL>{post.title}</TextL>
 				<TextM padding="1em 0">{post.shortDescription.shortDescription}</TextM>
