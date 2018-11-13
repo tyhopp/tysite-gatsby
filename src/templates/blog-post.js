@@ -36,7 +36,6 @@ class BlogPost extends React.Component {
 			date,
 			slug,
 			shortDescription,
-			previewImage,
 			category,
 		} = page[0].node
 		const content = page[0].node.content.content
@@ -72,9 +71,6 @@ class BlogPost extends React.Component {
 						</LinkInternal>
 					</Header>
 					<Wrapper content padding="0.5em 0 2em 0">
-						<Content img key={previewImage.id}>
-							<Img fluid={previewImage.fluid} alt={previewImage.title} />
-						</Content>
 						<Content>
 							<TextXL padding="1em 0 0 0">{title}</TextXL>
 							<Filter article margin="0.75em 0">
@@ -150,13 +146,6 @@ export const blogPostQuery = graphql`
 						shortDescription
 					}
 					category
-					previewImage {
-						id
-						title
-						fluid {
-							...GatsbyContentfulFluid_withWebp
-						}
-					}
 					content {
 						... on ContentfulContainer {
 							content {

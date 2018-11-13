@@ -136,13 +136,6 @@ export const indexQuery = graphql`
 					shortDescription {
 						shortDescription
 					}
-					previewImage {
-						id
-						title
-						fluid {
-							...GatsbyContentfulFluid_withWebp
-						}
-					}
 					category
 				}
 			}

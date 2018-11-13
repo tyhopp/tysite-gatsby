@@ -175,13 +175,6 @@ export const blogAllQuery = graphql`
 					shortDescription {
 						shortDescription
 					}
-					previewImage {
-						id
-						title
-						fluid {
-							...GatsbyContentfulFluid_withWebp
-						}
-					}
 					category
 				}
 			}
