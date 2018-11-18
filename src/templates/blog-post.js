@@ -1,15 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import Ahmah from '../components/ahmah'
 import Wrapper from '../components/wrapper'
 import Content from '../components/content'
-import Header from '../components/header'
 import TextS from '../components/textS'
 import TextM from '../components/textM'
 import TextXL from '../components/textXL'
 import ReactMarkdown from 'react-markdown'
-import Img from 'gatsby-image'
 import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Column from '../components/column'
@@ -17,13 +14,12 @@ import Row from '../components/row'
 import Tile from '../components/tile'
 import Filter from '../components/filter'
 import copy from 'copy-to-clipboard'
-import { light } from '../utils/colors'
 import '../utils/markdown.css'
 import { graphql } from 'gatsby'
 
 class BlogPost extends React.Component {
 	copyToClipboard() {
-		const url = `https://myahmahsay.com${window.location.pathname}`
+		const url = `https:/tyhopp.com${window.location.pathname}`
 		copy(url)
 		alert('Copied link to clipboard ✅')
 	}
@@ -31,19 +27,13 @@ class BlogPost extends React.Component {
 	render() {
 		const page = this.props.data.allContentfulBlogPost.edges // returns array of Blog Post children
 
-		const {
-			title,
-			date,
-			slug,
-			shortDescription,
-			category,
-		} = page[0].node
+		const { title, date, slug, shortDescription, category } = page[0].node
 		const content = page[0].node.content.content
 		return (
 			<Layout>
 				<div>
 					<Helmet>
-						<title>My Ahmah Say</title>
+						<title>Blog | Ty Hopp</title>
 						<meta name="title" content={title} />
 						<meta
 							name="description"
@@ -56,20 +46,8 @@ class BlogPost extends React.Component {
 							property="og:description"
 							content={shortDescription.shortDescription}
 						/>
-						<meta
-							property="og:url"
-							content={`https://myahmahsay.com/${slug}`}
-						/>
-						<link
-							href="https://fonts.googleapis.com/css?family=Didact+Gothic|Fredericka+the+Great"
-							rel="stylesheet"
-						/>
+						<meta property="og:url" content={`https://tyhopp.com/${slug}`} />
 					</Helmet>
-					<Header>
-						<LinkInternal to="/" borderless aria-label="Link to home">
-							<Ahmah />
-						</LinkInternal>
-					</Header>
 					<Wrapper content padding="0.5em 0 2em 0">
 						<Content>
 							<TextXL padding="1em 0 0 0">{title}</TextXL>
@@ -86,7 +64,7 @@ class BlogPost extends React.Component {
 									</Button>
 								))}
 							</Filter>
-							<TextS color={light}>{date}</TextS>
+							<TextS>{date}</TextS>
 						</Content>
 						{content &&
 							content.map(block => (
@@ -98,21 +76,13 @@ class BlogPost extends React.Component {
 											</TextM>
 										</Content>
 									)}
-									{block.image && (
-										<Content img key={block.image.id}>
-											<Img fluid={block.image.fluid} alt={block.title} />
-											<TextS center color={light} padding="1em 0">
-												{block.image.description}
-											</TextS>
-										</Content>
-									)}
 								</div>
 							))}
 						<Column>
 							<Tile>
 								<TextM center>
-									Thanks for checking out My Ahmah Say! Feel free to pass this
-									to a friend if you like it (:
+									Thanks for checking my site! Feel free to pass this to a
+									friend if you like it (:
 								</TextM>
 								<Row>
 									<Button onClick={this.copyToClipboard}>Copy URL</Button>

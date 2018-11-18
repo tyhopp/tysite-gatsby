@@ -1,3 +1,35 @@
+@font-face {
+	font-family: 'HK Grotesk Regular';
+	font-display: block;
+	src: url('../assets/fonts/HKGroteskPro-Regular.woff2') format('woff2'),
+		url('../assets/fonts/HKGroteskPro-Regular.woff') format('woff'),
+		url('../assets/fonts/HKGroteskPro-Regular.ttf') format('truetype'),
+		url('../assets/fonts/HKGroteskPro-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: 'HK Grotesk Italic';
+	font-display: block;
+	src: url('../assets/fonts/HKGroteskPro-Italic.woff2') format('woff2'),
+		url('../assets/fonts/HKGroteskPro-Italic.woff') format('woff'),
+		url('../assets/fonts/HKGroteskPro-Italic.ttf') format('truetype'),
+		url('../assets/fonts/HKGroteskPro-Italic.otf') format('opentype');
+}
+@font-face {
+	font-family: 'HK Grotesk Medium';
+	font-display: block;
+	src: url('../assets/fonts/HKGroteskPro-Medium.woff2') format('woff2'),
+		url('../assets/fonts/HKGroteskPro-Medium.woff') format('woff'),
+		url('../assets/fonts/HKGroteskPro-Medium.ttf') format('truetype'),
+		url('../assets/fonts/HKGroteskPro-Medium.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Quincy';
+	font-display: block;
+	src: url('../assets/fonts/QuincyCF-ExtraBold.woff2') format('woff2'),
+		url('../assets/fonts/QuincyCF-ExtraBold.woff') format('woff'),
+		url('../assets/fonts/QuincyCF-ExtraBold.otf') format('opentype');
+}
+
 * {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -11,16 +43,14 @@ body {
 }
 
 body {
-	font-family: 'Didact Gothic', sans-serif;
-	color: #020836;
+	font-family: 'HK Grotesk Regular', sans-serif;
+	color: #151951;
 	margin: 0;
 	overflow-x: hidden;
 }
 
 h1,
-h2,
-h3 {
-	font-family: 'Fredericka the Great', cursive;
-	font-weight: normal;
-	color: #020836;
+h2 {
+	font-family: 'Quincy', serif;
+	color: #151951;
 }

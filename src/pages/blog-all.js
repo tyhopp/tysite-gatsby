@@ -1,18 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import Ahmah from '../components/ahmah'
 import Header from '../components/header'
 import TextXL from '../components/textXL'
 import Wrapper from '../components/wrapper'
 import Container from '../components/container'
 import Block from '../components/block'
-import LinkInternal from '../components/linkInternal'
 import Card from '../components/card'
 import Button from '../components/button'
 import Filter from '../components/filter'
-import DecorTopLeft from '../components/decorTopLeft'
-import DecorTopRight from '../components/decorTopRight'
 import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
 import { white } from '../utils/colors'
@@ -91,32 +87,21 @@ class BlogAll extends React.Component {
 			<Layout>
 				<Wrapper padding="0 1em 5em 1em">
 					<Helmet>
-						<title>Articles</title>
-						<meta name="title" content="Articles" />
-						<meta name="description" content="All articles from My Ahmah Say" />
+						<title>Blog</title>
+						<meta name="title" content="Blog" />
+						<meta name="description" content="All blog posts from Ty Hopp" />
 						<meta property="og:type" content="website" />
-						<meta property="og:title" content="My Ahmah Say" />
+						<meta property="og:title" content="Ty Hopp" />
 						<meta
 							property="og:description"
-							content="All blog posts from My Ahmah Say"
+							content="All blog posts from Ty Hopp"
 						/>
-						<meta property="og:url" content="https://myahmahsay.com/blog-all" />
-						<link
-							href="https://fonts.googleapis.com/css?family=Didact+Gothic|Fredericka+the+Great"
-							rel="stylesheet"
-						/>
+						<meta property="og:url" content="https://tyhopp.com/blog-all" />
 					</Helmet>
-					<DecorTopLeft />
-					<DecorTopRight />
 					<Header>
 						<Block>
-							<LinkInternal to="/" borderless aria-label="Link to home">
-								<Ahmah />
-							</LinkInternal>
-						</Block>
-						<Block>
 							<TextXL center padding="0.5em 0">
-								Articles
+								Blog
 							</TextXL>
 						</Block>
 						<Block>
