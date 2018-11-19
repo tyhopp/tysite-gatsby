@@ -54,8 +54,15 @@ class Index extends React.Component {
 						</TextM>
 						<TextM>
 							I specialize in in the full lifecycle of product development -
-							design, prototyping and development. If this sounds like your cup
-							of tea, see my experience below:
+							design, prototype and development. If this sounds like your cup of
+							tea, see my more of my work experience below{' '}
+							<span
+								role="img"
+								aria-label="Finger pointing down emoji"
+								style={{ fontSize: 20 }}
+							>
+								👇
+							</span>
 						</TextM>
 						{items &&
 							items.map(item => <Card item={item} key={item.node.id} />)}
