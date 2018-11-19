@@ -7,6 +7,7 @@ const TextL = styled.h2`
 	color: ${dark};
 	line-height: 42px;
 	padding: ${props => (props.padding ? props.padding : `auto`)};
+	margin: ${props => (props.margin ? props.margin : `auto`)};
 	text-align: ${props => (props.center ? `center` : `left`)};
 `
 

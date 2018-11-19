@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { dark } from '../utils/colors'
 
-const TextM = styled.p`
+const Bullet = styled.li`
 	font-family: ${props =>
 			props.medium ? `HK Grotesk Medium` : `HK Grotesk Regular`},
 		sans-serif;
@@ -13,4 +13,4 @@ const TextM = styled.p`
 	text-align: ${props => (props.center ? `center` : `left`)};
 `
 
-export default TextM
+export default Bullet

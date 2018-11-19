@@ -5,3 +5,19 @@
 	border-bottom: 1px solid #151951;
 	color: #151951;
 }
+
+#markdown li {
+	list-style: url('../assets/svg/darkListItem.svg');
+}
+
+#Flyright li {
+	list-style: url('../assets/svg/purpleListItem.svg');
+}
+
+#Edenspiekermann li {
+	list-style: url('../assets/svg/redListItem.svg');
+}
+
+#Bytedance li {
+	list-style: url('../assets/svg/blueListItem.svg');
+}

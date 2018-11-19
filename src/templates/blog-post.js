@@ -6,7 +6,7 @@ import Content from '../components/content'
 import TextS from '../components/textS'
 import TextM from '../components/textM'
 import TextXL from '../components/textXL'
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'react-markdown'
 import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Column from '../components/column'
@@ -72,7 +72,7 @@ class BlogPost extends React.Component {
 									{block.body && (
 										<Content key={block.body.id}>
 											<TextM id="markdown">
-												<ReactMarkdown source={block.body.body} />
+												<Markdown source={block.body.body} />
 											</TextM>
 										</Content>
 									)}

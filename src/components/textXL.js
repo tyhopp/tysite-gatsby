@@ -8,6 +8,7 @@ const TextXL = styled.h1`
 	color: ${dark};
 	line-height: 52px;
 	padding: ${props => (props.padding ? props.padding : `auto`)};
+	margin: ${props => (props.margin ? props.margin : `auto`)};
 	text-align: ${props => (props.center ? `center` : `left`)};
 
 	${media.tab`

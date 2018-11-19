@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Header from '../components/header'
 import TextXL from '../components/textXL'
 import Wrapper from '../components/wrapper'
-import Container from '../components/container'
+import Column from '../components/column'
 import Block from '../components/block'
 import Card from '../components/card'
 import Button from '../components/button'
@@ -133,13 +133,13 @@ class BlogAll extends React.Component {
 							</Filter>
 						</Block>
 					</Header>
-					<Container>
+					<Column>
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
 									<Card post={post} key={post.node.id} />
 							  ))
 							: posts.map(post => <Card post={post} key={post.node.id} />)}
-					</Container>
+					</Column>
 				</Wrapper>
 			</Layout>
 		)

@@ -9,6 +9,7 @@ const TextS = styled.div`
 	color: ${dark};
 	line-height: 28px;
 	padding: ${props => (props.padding ? props.padding : `auto`)};
+	margin: ${props => (props.margin ? props.margin : `auto`)};
 	text-align: ${props => (props.center ? `center` : `left`)};
 `
 
