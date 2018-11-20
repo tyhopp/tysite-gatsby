@@ -94,9 +94,13 @@ class Index extends React.Component {
 							>
 								My Ahmah Say
 							</LinkExternal>
-							, and the{' '}
-							<LinkExternal href="#" target="_blank" rel="noopener">
-								transport-themed precursor to this site.
+							, and{' '}
+							<LinkExternal
+								href="https://tysite-v2.netlify.com"
+								target="_blank"
+								rel="noopener"
+							>
+								v2 of this site.
 							</LinkExternal>
 						</TextM>
 						<TextM margin="0 0 2em 0">
