@@ -6,7 +6,6 @@ import List from './list'
 import Bullet from './bullet'
 import Button from './button'
 import LinkExternal from './linkExternal'
-import Img from 'gatsby-image'
 import Block from './block'
 import Column from './column'
 import { gray } from '../utils/colors'
@@ -19,7 +18,7 @@ const Card = props => {
 		<Container key={item.id}>
 			<Block padding="2em">
 				<Column padding="0.5em 0em">
-					<Img fixed={item.logo.fixed} alt={item.logo.title} />
+					<img alt={item.logo.description} src={item.logo.file.url} />
 				</Column>
 				<TextL center padding="0.25em 0em">
 					{item.title}

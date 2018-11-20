@@ -149,9 +149,9 @@ export const indexQuery = graphql`
 					secondAccent
 					logo {
 						id
-						title
-						fixed(width: 75, height: 75) {
-							...GatsbyContentfulFixed_withWebp
+						description
+						file {
+							url
 						}
 					}
 					bullets {
