@@ -13,6 +13,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-remark`,
+		/*
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -20,6 +21,7 @@ module.exports = {
 				path: `${__dirname}/src/assets/img/`,
 			},
 		},
+		*/
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
