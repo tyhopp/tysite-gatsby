@@ -9,7 +9,7 @@ const Box = styled(Link)`
 	align-items: center;
 	justify-content: center;
 	padding: 0 2.5em;
-	height: 56px;
+	height: 54px;
 	width: 33.33%;
 	border-left: 1px solid ${gray};
 	cursor: pointer;
