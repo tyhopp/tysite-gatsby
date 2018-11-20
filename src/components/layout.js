@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import '../utils/layout.css'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
@@ -15,7 +16,7 @@ class Layout extends React.Component {
 	render() {
 		const { children } = this.props
 		return (
-			<div>
+			<Master>
 				<Helmet>
 					<meta charSet="utf-8" />
 					<html lang="en" />
@@ -53,9 +54,13 @@ class Layout extends React.Component {
 				<Header location={this.props.location} />
 				{children}
 				<Footer />
-			</div>
+			</Master>
 		)
 	}
 }
+
+const Master = styled.div`
+	margin: 5.5em 0 0 0;
+`
 
 export default Layout

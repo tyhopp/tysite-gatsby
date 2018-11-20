@@ -98,7 +98,7 @@ class BlogAll extends React.Component {
 						<meta property="og:url" content="https://tyhopp.com/blog-all" />
 					</Helmet>
 					<Block>
-						<TextXL center padding="0.5em 0">
+						<TextXL center padding="0 0 0.5em 0">
 							Blog
 						</TextXL>
 					</Block>

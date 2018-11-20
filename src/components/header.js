@@ -36,11 +36,16 @@ const Header = props => (
 )
 
 const Container = styled.div`
+	position: fixed;
+	z-index: 3;
+	top: 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 56px;
+	height: 50px;
+	width: 100%;
+	background-color: ${white};
 	border-bottom: 1px solid ${gray};
 `
 

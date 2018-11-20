@@ -42,9 +42,9 @@ class Index extends React.Component {
 					<meta property="og:url" content="https://tyhopp.com" />
 				</Helmet>
 				<Wrapper padding="0 1em">
-					<Column margin="2em auto" style={{ maxWidth: 440 }}>
-						<Row center>
-							<TextXL margin="0.25em 0.25em 0.5em 0">Hi, I'm Ty</TextXL>
+					<Column margin="0 auto" style={{ maxWidth: 440 }}>
+						<Row center margin="0 0 1em 0">
+							<TextXL margin="0 0.25em 0 0">Hi, I'm Ty</TextXL>
 							<EmojiWaveHand />
 						</Row>
 						<TextM>
