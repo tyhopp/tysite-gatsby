@@ -1,12 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import Header from '../components/header'
 import TextXL from '../components/textXL'
+import TextL from '../components/textL'
 import Wrapper from '../components/wrapper'
 import Column from '../components/column'
 import Block from '../components/block'
-import Card from '../components/card'
 import Button from '../components/button'
 import Filter from '../components/filter'
 import uniq from 'lodash/uniq'
@@ -98,47 +97,44 @@ class BlogAll extends React.Component {
 						/>
 						<meta property="og:url" content="https://tyhopp.com/blog-all" />
 					</Helmet>
-					<Header>
-						<Block>
-							<TextXL center padding="0.5em 0">
-								Blog
-							</TextXL>
-						</Block>
-						<Block>
-							<Filter>
-								<Button
-									onClick={() => this.setState({ currentFilter: '' })}
-									style={{
-										backgroundColor:
-											currentFilter !== '' ? white : `ghostwhite`,
-									}}
-								>
-									All
-								</Button>
-								{loaded &&
-									categories.map(category => {
-										return (
-											<Button
-												key={category}
-												onClick={e => this.filterPosts(e)}
-												style={{
-													backgroundColor:
-														category === currentFilter ? `ghostwhite` : white,
-												}}
-											>
-												{category}
-											</Button>
-										)
-									})}
-							</Filter>
-						</Block>
-					</Header>
+					<Block>
+						<TextXL center padding="0.5em 0">
+							Blog
+						</TextXL>
+					</Block>
+					<Block>
+						<Filter>
+							<Button
+								onClick={() => this.setState({ currentFilter: '' })}
+								style={{
+									backgroundColor: currentFilter !== '' ? white : `ghostwhite`,
+								}}
+							>
+								All
+							</Button>
+							{loaded &&
+								categories.map(category => {
+									return (
+										<Button
+											key={category}
+											onClick={e => this.filterPosts(e)}
+											style={{
+												backgroundColor:
+													category === currentFilter ? `ghostwhite` : white,
+											}}
+										>
+											{category}
+										</Button>
+									)
+								})}
+						</Filter>
+					</Block>
 					<Column>
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
-									<Card post={post} key={post.node.id} />
+									<TextL key={post.id}>{post.title}</TextL>
 							  ))
-							: posts.map(post => <Card post={post} key={post.node.id} />)}
+							: posts.map(post => <TextL key={post.id}>{post.title}</TextL>)}
 					</Column>
 				</Wrapper>
 			</Layout>

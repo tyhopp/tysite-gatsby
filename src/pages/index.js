@@ -25,26 +25,26 @@ class Index extends React.Component {
 
 		return (
 			<Layout>
+				<Helmet>
+					<title>Ty Hopp</title>
+					<meta name="title" content="Ty Hopp" />
+					<meta
+						name="description"
+						content="Singapore-based frontend developer and designer crafting delightful experiences for the web and native apps."
+					/>
+					<meta name="keywords" content="frontend, developer, designer" />
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content="Ty Hopp" />
+					<meta
+						property="og:description"
+						content="Singapore-based frontend developer and designer crafting delightful experiences for the web and native apps."
+					/>
+					<meta property="og:url" content="https://tyhopp.com" />
+				</Helmet>
 				<Wrapper padding="0 1em">
-					<Helmet>
-						<title>Ty Hopp</title>
-						<meta name="title" content="Ty Hopp" />
-						<meta
-							name="description"
-							content="Singapore-based frontend developer and designer crafting delightful experiences for the web and native apps."
-						/>
-						<meta name="keywords" content="frontend, developer, designer" />
-						<meta property="og:type" content="website" />
-						<meta property="og:title" content="Ty Hopp" />
-						<meta
-							property="og:description"
-							content="Singapore-based frontend developer and designer crafting delightful experiences for the web and native apps."
-						/>
-						<meta property="og:url" content="https://tyhopp.com" />
-					</Helmet>
 					<Column margin="2em auto" style={{ maxWidth: 440 }}>
 						<Row center>
-							<TextXL margin="0.5em 0.25em 0.5em 0">Hi, I'm Ty</TextXL>
+							<TextXL margin="0.25em 0.25em 0.5em 0">Hi, I'm Ty</TextXL>
 							<EmojiWaveHand />
 						</Row>
 						<TextM>
