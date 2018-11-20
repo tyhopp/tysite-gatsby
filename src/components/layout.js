@@ -50,7 +50,7 @@ class Layout extends React.Component {
 					<meta name="msapplication-TileColor" content="#2d89ef" />
 					<meta name="theme-color" content="#ffffff" />
 				</Helmet>
-				<Header />
+				<Header location={this.props.location} />
 				{children}
 				<Footer />
 			</div>

@@ -13,6 +13,8 @@ const Box = styled(Link)`
 	width: 33.33%;
 	border-left: 1px solid ${gray};
 	cursor: pointer;
+	background-color: ${props => props.color};
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 	${media.tab`
 		width: initial;

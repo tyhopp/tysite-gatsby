@@ -30,7 +30,7 @@ class BlogPost extends React.Component {
 		const { title, date, slug, shortDescription, category } = page[0].node
 		const content = page[0].node.content.content
 		return (
-			<Layout>
+			<Layout location={this.props.location}>
 				<div>
 					<Helmet>
 						<title>Blog | Ty Hopp</title>

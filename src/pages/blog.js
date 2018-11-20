@@ -83,7 +83,7 @@ class BlogAll extends React.Component {
 		} = this.state
 
 		return (
-			<Layout>
+			<Layout location={this.props.location}>
 				<Wrapper padding="0 1em 5em 1em">
 					<Helmet>
 						<title>Blog</title>

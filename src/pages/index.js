@@ -24,7 +24,7 @@ class Index extends React.Component {
 		// const map = this.props.data.map
 
 		return (
-			<Layout>
+			<Layout location={this.props.location}>
 				<Helmet>
 					<title>Ty Hopp</title>
 					<meta name="title" content="Ty Hopp" />
