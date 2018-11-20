@@ -9,7 +9,7 @@ import LinkInternal from '../components/linkInternal'
 class MissingRoute extends React.Component {
 	render() {
 		return (
-			<Layout>
+			<Layout location={this.props.location}>
 				<Wrapper padding="0 1em">
 					<Column padding="2em 0">
 						<TextXL>404</TextXL>
