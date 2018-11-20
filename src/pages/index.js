@@ -26,7 +26,7 @@ class Index extends React.Component {
 		return (
 			<Layout location={this.props.location}>
 				<Helmet>
-					<title>Ty Hopp</title>
+					<title>Work | Ty Hopp</title>
 					<meta name="title" content="Ty Hopp" />
 					<meta
 						name="description"

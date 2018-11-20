@@ -12,7 +12,7 @@ import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
 import { white } from '../utils/colors'
 
-class Blog extends React.Component {
+class Lists extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -86,20 +86,23 @@ class Blog extends React.Component {
 			<Layout location={this.props.location}>
 				<Wrapper padding="0 1em 5em 1em">
 					<Helmet>
-						<title>Blog | Ty Hopp</title>
-						<meta name="title" content="Blog | Ty Hopp" />
-						<meta name="description" content="All blog posts from Ty Hopp" />
+						<title>Lists | Ty Hopp</title>
+						<meta name="title" content="Lists | Ty Hopp" />
+						<meta
+							name="description"
+							content="All the lovely lists from Ty Hopp"
+						/>
 						<meta property="og:type" content="website" />
 						<meta property="og:title" content="Ty Hopp" />
 						<meta
 							property="og:description"
-							content="All blog posts from Ty Hopp"
+							content="All the lovely lists from Ty Hopp"
 						/>
-						<meta property="og:url" content="https://tyhopp.com/blog" />
+						<meta property="og:url" content="https://tyhopp.com/lists" />
 					</Helmet>
 					<Block>
 						<TextXL center padding="0 0 0.5em 0">
-							Blog
+							Lists
 						</TextXL>
 					</Block>
 					<Block>
@@ -142,10 +145,10 @@ class Blog extends React.Component {
 	}
 }
 
-export default Blog
+export default Lists
 
-export const blogQuery = graphql`
-	query blogPageQuery {
+export const listsQuery = graphql`
+	query listsPageQuery {
 		allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
 			edges {
 				node {

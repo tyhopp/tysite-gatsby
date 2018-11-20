@@ -1,14 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import '../utils/layout.css'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import faviconApple from '../assets/favicon/apple-touch-icon.png'
-import favicon32 from '../assets/favicon/favicon-32x32.png'
-import favicon16 from '../assets/favicon/favicon-16x16.png'
-import maskIcon from '../assets/favicon/safari-pinned-tab.svg'
-import shortcutIcon from '../assets/favicon/favicon.ico'
+import { selectFavicon } from '../utils/favicon'
+import '../utils/layout.css'
+
 import HKGroteskPro from '../assets/fonts/HKGroteskPro-Regular.woff2'
 import QuincyCF from '../assets/fonts/QuincyCF-ExtraBold.woff2'
 
@@ -25,11 +22,6 @@ class Layout extends React.Component {
 						name="viewport"
 						content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 					/>
-					<link rel="apple-touch-icon" sizes="180x180" href={faviconApple} />
-					<link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
-					<link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
-					<link rel="mask-icon" href={maskIcon} color="#FFFFFF" />
-					<link rel="shortcut icon" href={shortcutIcon} />
 					<link
 						rel="preload"
 						href={HKGroteskPro}
@@ -44,6 +36,7 @@ class Layout extends React.Component {
 						crossorigin="anonymous"
 						as="font"
 					/>
+
 					<meta
 						name="msapplication-config"
 						content={`../assets/favicon/browserconfig.xml`}
@@ -51,6 +44,7 @@ class Layout extends React.Component {
 					<meta name="msapplication-TileColor" content="#2d89ef" />
 					<meta name="theme-color" content="#ffffff" />
 				</Helmet>
+				{selectFavicon(this.props.location)}
 				<Header location={this.props.location} />
 				{children}
 				<Footer />
