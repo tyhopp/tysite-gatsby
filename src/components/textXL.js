@@ -7,6 +7,7 @@ const TextXL = styled.h1`
 	font-size: 44px;
 	color: ${dark};
 	line-height: 52px;
+	letter-spacing: -0.2px;
 	padding: ${props => (props.padding ? props.padding : `auto`)};
 	margin: ${props => (props.margin ? props.margin : `auto`)};
 	text-align: ${props => (props.center ? `center` : `left`)};
@@ -15,6 +16,10 @@ const TextXL = styled.h1`
 		font-size: 48px;
 		line-height: 58px;
 	`};
+
+	${media.desk`
+		letter-spacing: initial;
+	`}
 `
 
 export default TextXL

@@ -31,6 +31,8 @@ export const selectFavicon = location => {
 				<link rel="shortcut icon" href={boxShortcutIcon} />
 			</Helmet>
 		)
+
+		// If route is blog or blog post, return hand favicon
 	} else if (location.pathname.substring(0, 5) === '/blog') {
 		return (
 			<Helmet>
@@ -40,6 +42,8 @@ export const selectFavicon = location => {
 				<link rel="shortcut icon" href={handShortcutIcon} />
 			</Helmet>
 		)
+
+		// If route is lists or list post, return heart favicon
 	} else if (location.pathname.substring(0, 6) === '/lists') {
 		return (
 			<Helmet>
