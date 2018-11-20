@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from '../utils/media'
 import Box from './box'
 import EmojiCardBox from '../emoji/emojiCardBox'
 import EmojiHandWriting from '../emoji/emojiHandWriting'
@@ -43,10 +44,14 @@ const Container = styled.div`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
+	height: 56px;
 	width: 100%;
 	background-color: ${white};
 	border-bottom: 1px solid ${gray};
+
+	${media.desk`
+		height: 50px;
+	`}
 `
 
 export default Header

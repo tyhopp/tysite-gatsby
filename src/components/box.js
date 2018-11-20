@@ -9,7 +9,7 @@ const Box = styled(Link)`
 	align-items: center;
 	justify-content: center;
 	padding: 0 2.5em;
-	height: 50px;
+	height: 56px;
 	width: 33.33%;
 	border-left: 1px solid ${gray};
 	cursor: pointer;
@@ -21,6 +21,7 @@ const Box = styled(Link)`
 		padding: 0 3em;
 	`}
 	${media.desk`
+		height: 50px;
 		padding: 0 3.5em;
 	`}
 
