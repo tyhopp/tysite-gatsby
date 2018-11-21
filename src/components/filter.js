@@ -4,7 +4,7 @@ const Filter = styled.div`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: ${props => (props.article ? `flex-start` : `center`)};
+	justify-content: ${props => (props.left ? `flex-start` : `center`)};
 	padding: ${props => (props.padding ? props.padding : `auto`)};
 	margin: ${props => (props.margin ? props.margin : `auto`)};
 `

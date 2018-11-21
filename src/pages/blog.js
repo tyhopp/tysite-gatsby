@@ -3,14 +3,17 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import TextXL from '../components/textXL'
 import TextL from '../components/textL'
+import TextM from '../components/textM'
 import Wrapper from '../components/wrapper'
-import Column from '../components/column'
+import Content from '../components/content'
 import Block from '../components/block'
+import LineBreak from '../components/lineBreak'
+import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Filter from '../components/filter'
 import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
-import { white } from '../utils/colors'
+import { light, mist } from '../utils/colors'
 
 class Blog extends React.Component {
 	constructor(props) {
@@ -65,8 +68,10 @@ class Blog extends React.Component {
 			})
 		})
 
-		if (this.props.location.state.filterCategory) {
-			this.filterPostsFromArticle()
+		if (this.props.location.state) {
+			if (this.props.location.state.filterCategory) {
+				this.filterPostsFromArticle()
+			}
 		}
 
 		// Set state with all known unique categories
@@ -98,16 +103,19 @@ class Blog extends React.Component {
 						<meta property="og:url" content="https://tyhopp.com/blog" />
 					</Helmet>
 					<Block>
-						<TextXL center padding="0 0 0.5em 0">
-							Blog
-						</TextXL>
+						<TextXL center>Blog</TextXL>
+						<TextM center padding="1em 0" style={{ maxWidth: 440 }}>
+							More serious and technical articles about things I encounter as a
+							frontend developer.
+						</TextM>
 					</Block>
 					<Block>
 						<Filter>
 							<Button
 								onClick={() => this.setState({ currentFilter: '' })}
 								style={{
-									backgroundColor: currentFilter !== '' ? white : `ghostwhite`,
+									backgroundColor: currentFilter !== '' ? light : mist,
+									padding: '0.7em 1.5em 0.6em 1.5em',
 								}}
 							>
 								All
@@ -120,7 +128,8 @@ class Blog extends React.Component {
 											onClick={e => this.filterPosts(e)}
 											style={{
 												backgroundColor:
-													category === currentFilter ? `ghostwhite` : white,
+													category === currentFilter ? mist : light,
+												padding: '0.7em 1.5em 0.6em 1.5em',
 											}}
 										>
 											{category}
@@ -129,13 +138,68 @@ class Blog extends React.Component {
 								})}
 						</Filter>
 					</Block>
-					<Column>
+					<Content>
+						<LineBreak />
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
-									<TextL key={post.id}>{post.title}</TextL>
+									<Block key={post.id} margin="3em 0">
+										<LinkInternal to={`blog/${post.node.slug}`}>
+											<TextL>{post.node.title}</TextL>
+										</LinkInternal>
+										<TextM margin="0.25em 0">
+											{post.node.shortDescription.shortDescription}
+										</TextM>
+										<Filter left margin="0 0 0 -0.5em">
+											{post.node.category.map(category => (
+												<Button
+													key={category}
+													onClick={e => {
+														this.filterPosts(e)
+														window.scrollTo(0, 0)
+													}}
+													style={{
+														fontSize: 15,
+														padding: '0.5em 1.5em',
+														backgroundColor:
+															category === currentFilter ? mist : light,
+													}}
+												>
+													{category}
+												</Button>
+											))}
+										</Filter>
+									</Block>
 							  ))
-							: posts.map(post => <TextL key={post.id}>{post.title}</TextL>)}
-					</Column>
+							: posts.map(post => (
+									<Block key={post.id} margin="3em 0">
+										<LinkInternal to={`blog/${post.node.slug}`}>
+											<TextL>{post.node.title}</TextL>
+										</LinkInternal>
+										<TextM margin="0.25em 0">
+											{post.node.shortDescription.shortDescription}
+										</TextM>
+										<Filter left margin="0 0 0 -0.5em">
+											{post.node.category.map(category => (
+												<Button
+													key={category}
+													onClick={e => {
+														this.filterPosts(e)
+														window.scrollTo(0, 0)
+													}}
+													style={{
+														fontSize: 15,
+														padding: '0.5em 1.5em',
+														backgroundColor:
+															category === currentFilter ? mist : light,
+													}}
+												>
+													{category}
+												</Button>
+											))}
+										</Filter>
+									</Block>
+							  ))}
+					</Content>
 				</Wrapper>
 			</Layout>
 		)

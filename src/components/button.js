@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { dark, white } from '../utils/colors'
+import { dark, light, mist, white } from '../utils/colors'
 
 const Button = styled.div`
 	display: block;
@@ -8,20 +8,21 @@ const Button = styled.div`
 	letter-spacing: 0.75px;
 	width: fit-content;
 	align-self: center;
-	color: ${props => (props.accent ? 'white' : dark)};
+	color: ${props => (props.accent ? white : dark)};
 	text-decoration: none;
 	text-align: center;
 	padding: 0.75em 1.5em;
-	background-color: ${props => (props.accent ? props.accent : white)};
+	background-color: ${props => (props.accent ? props.accent : light)};
 	cursor: pointer;
-	margin: 1em auto;
+	user-select: none;
+	margin: ${props => (props.center ? `1em auto` : `0.3em`)};
 	border-radius: 100px;
 	line-height: 20px;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 	&:hover {
 		background-color: ${props =>
-			props.secondAccent ? props.secondAccent : white};
+			props.secondAccent ? props.secondAccent : mist};
 	}
 `
 
