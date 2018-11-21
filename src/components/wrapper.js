@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import media from '../utils/media'
 
 const Wrapper = styled.div`
 	padding: ${props => (props.padding ? props.padding : `2em 0`)};

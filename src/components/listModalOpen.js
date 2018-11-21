@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import media from '../utils/media'
-import { light, mist } from '../utils/colors'
+import { light } from '../utils/colors'
 
 const ListModalOpen = styled.div`
 	display: flex;

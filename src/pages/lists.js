@@ -3,25 +3,33 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import TextXL from '../components/textXL'
 import TextL from '../components/textL'
+import TextM from '../components/textM'
 import Wrapper from '../components/wrapper'
-import Column from '../components/column'
+import Content from '../components/content'
 import Block from '../components/block'
+import LineBreak from '../components/lineBreak'
+import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Filter from '../components/filter'
+import IconClose from '../components/iconClose'
+import Modal from 'react-modal'
+import ListModalOpen from '../components/listModalOpen'
 import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
-import { white } from '../utils/colors'
+import { light, mist, white } from '../utils/colors'
 
-class Lists extends React.Component {
+class List extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			categories: [],
 			loaded: false,
-			posts: this.props.data.allContentfulBlogPost.edges,
+			posts: this.props.data.allContentfulListPost.edges,
 			currentFilter: '',
 			filteredPosts: [],
+			showModal: false,
 		}
+		this.toggleModal = this.toggleModal.bind(this)
 	}
 
 	filterPosts(e) {
@@ -51,8 +59,16 @@ class Lists extends React.Component {
 		})
 	}
 
+	toggleModal() {
+		this.state.showModal
+			? this.setState({ showModal: false })
+			: this.setState({ showModal: true })
+	}
+
 	componentDidMount() {
-		const posts = this.props.data.allContentfulBlogPost.edges
+		Modal.setAppElement('#___gatsby')
+
+		const posts = this.props.data.allContentfulListPost.edges
 		// eslint-disable-next-line
 		const knownCategories = []
 		// eslint-disable-next-line
@@ -65,8 +81,10 @@ class Lists extends React.Component {
 			})
 		})
 
-		if (this.props.location.state.filterCategory) {
-			this.filterPostsFromArticle()
+		if (this.props.location.state) {
+			if (this.props.location.state.filterCategory) {
+				this.filterPostsFromArticle()
+			}
 		}
 
 		// Set state with all known unique categories
@@ -82,35 +100,106 @@ class Lists extends React.Component {
 			filteredPosts,
 		} = this.state
 
+		const modalStyles = {
+			overlay: {
+				backgroundColor: 'rgba(10, 0, 55, 0.1)',
+				zIndex: 4,
+			},
+			content: {
+				top: 0,
+				right: 0,
+				left: 'none',
+				width: '100vw',
+				height: '100vh',
+				backgroundColor: white,
+				border: 'none',
+				borderRadius: '5px',
+			},
+		}
+
 		return (
 			<Layout location={this.props.location}>
-				<Wrapper padding="0 1em 5em 1em">
+				<Wrapper padding="0 0 5em 0">
 					<Helmet>
 						<title>Lists | Ty Hopp</title>
 						<meta name="title" content="Lists | Ty Hopp" />
-						<meta
-							name="description"
-							content="All the lovely lists from Ty Hopp"
-						/>
+						<meta name="description" content="All lovely lists from Ty Hopp" />
 						<meta property="og:type" content="website" />
 						<meta property="og:title" content="Ty Hopp" />
 						<meta
 							property="og:description"
-							content="All the lovely lists from Ty Hopp"
+							content="All lovely lists from Ty Hopp"
 						/>
 						<meta property="og:url" content="https://tyhopp.com/lists" />
 					</Helmet>
 					<Block>
-						<TextXL center padding="0 0 0.5em 0">
-							Lists
-						</TextXL>
+						<TextXL center>Lists</TextXL>
+						<TextM center padding="1em" style={{ maxWidth: 440 }}>
+							A serendipitous (and subjective) bunch of lists that just might be
+							useful.
+						</TextM>
 					</Block>
 					<Block>
-						<Filter>
+						<ListModalOpen onClick={this.toggleModal} margin="1em 0 2em 0">
+							<TextM
+								style={{
+									fontSize: 15,
+									fontWeight: 'bold',
+									letterSpacing: 0.75,
+								}}
+							>
+								Filter by category
+							</TextM>
+						</ListModalOpen>
+						<Modal
+							isOpen={this.state.showModal}
+							onRequestClose={this.toggleModal}
+							style={modalStyles}
+							contentLabel="Mobile Menu Modal"
+						>
+							<Block onClick={this.toggleModal}>
+								<IconClose />
+							</Block>
+							<Filter show margin="1em 0">
+								<Button
+									onClick={() =>
+										this.setState({ currentFilter: '', showModal: false })
+									}
+									style={{
+										backgroundColor: currentFilter !== '' ? light : mist,
+										margin: '0.5em',
+									}}
+								>
+									All
+								</Button>
+								{loaded &&
+									categories.map(category => {
+										return (
+											<Button
+												bigger
+												key={category}
+												onClick={e => {
+													this.filterPosts(e)
+													this.setState({ showModal: false })
+													window.scrollTo(0, 0)
+												}}
+												style={{
+													backgroundColor:
+														category === currentFilter ? mist : light,
+												}}
+											>
+												{category}
+											</Button>
+										)
+									})}
+							</Filter>
+						</Modal>
+						<Filter show={this.state.showModal ? true : false}>
 							<Button
 								onClick={() => this.setState({ currentFilter: '' })}
 								style={{
-									backgroundColor: currentFilter !== '' ? white : `ghostwhite`,
+									backgroundColor: currentFilter !== '' ? light : mist,
+									padding: '0.7em 1.5em 0.6em 1.5em',
 								}}
 							>
 								All
@@ -123,7 +212,8 @@ class Lists extends React.Component {
 											onClick={e => this.filterPosts(e)}
 											style={{
 												backgroundColor:
-													category === currentFilter ? `ghostwhite` : white,
+													category === currentFilter ? mist : light,
+												padding: '0.7em 1.5em 0.6em 1.5em',
 											}}
 										>
 											{category}
@@ -132,24 +222,79 @@ class Lists extends React.Component {
 								})}
 						</Filter>
 					</Block>
-					<Column>
+					<Content>
+						<LineBreak />
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
-									<TextL key={post.id}>{post.title}</TextL>
+									<Block key={post.id} margin="2.5em 0">
+										<LinkInternal to={`lists/${post.node.slug}`}>
+											<TextL article>{post.node.title}</TextL>
+										</LinkInternal>
+										<TextM margin="0.25em 0">
+											{post.node.shortDescription.shortDescription}
+										</TextM>
+										<Filter show left margin="0 0 0 -0.5em">
+											{post.node.category.map(category => (
+												<Button
+													key={category}
+													onClick={e => {
+														this.filterPosts(e)
+														window.scrollTo(0, 0)
+													}}
+													style={{
+														fontSize: 15,
+														padding: '0.5em 1.5em',
+														backgroundColor:
+															category === currentFilter ? mist : light,
+													}}
+												>
+													{category}
+												</Button>
+											))}
+										</Filter>
+									</Block>
 							  ))
-							: posts.map(post => <TextL key={post.id}>{post.title}</TextL>)}
-					</Column>
+							: posts.map(post => (
+									<Block key={post.id} margin="3em 0">
+										<LinkInternal to={`lists/${post.node.slug}`}>
+											<TextL article>{post.node.title}</TextL>
+										</LinkInternal>
+										<TextM margin="0.25em 0">
+											{post.node.shortDescription.shortDescription}
+										</TextM>
+										<Filter show left margin="0 0 0 -0.5em">
+											{post.node.category.map(category => (
+												<Button
+													key={category}
+													onClick={e => {
+														this.filterPosts(e)
+														window.scrollTo(0, 0)
+													}}
+													style={{
+														fontSize: 15,
+														padding: '0.5em 1.5em',
+														backgroundColor:
+															category === currentFilter ? mist : light,
+													}}
+												>
+													{category}
+												</Button>
+											))}
+										</Filter>
+									</Block>
+							  ))}
+					</Content>
 				</Wrapper>
 			</Layout>
 		)
 	}
 }
 
-export default Lists
+export default List
 
-export const listsQuery = graphql`
-	query listsPageQuery {
-		allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
+export const listQuery = graphql`
+	query listPageQuery {
+		allContentfulListPost(sort: { fields: [date], order: DESC }) {
 			edges {
 				node {
 					id

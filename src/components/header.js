@@ -29,7 +29,9 @@ const Header = props => (
 			to="/lists"
 			title="Lists"
 			style={{ borderRight: `1px solid ${gray}` }}
-			color={props.location.pathname === '/lists' ? light : white}
+			color={
+				props.location.pathname.substring(0, 6) === '/lists' ? light : white
+			}
 		>
 			<EmojiHeart />
 		</Box>
