@@ -57,7 +57,7 @@ class BlogPost extends React.Component {
 									<Button article key={item}>
 										<LinkInternal
 											borderless
-											to="/blog-all"
+											to="/blog"
 											state={{ filterCategory: item }}
 										>
 											{item}
@@ -88,7 +88,7 @@ class BlogPost extends React.Component {
 								<Row>
 									<Button onClick={this.copyToClipboard}>Copy URL</Button>
 									<Button>
-										<LinkInternal borderless to="/blog-all">
+										<LinkInternal borderless to="/blog">
 											More posts
 										</LinkInternal>
 									</Button>

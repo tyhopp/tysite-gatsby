@@ -11,9 +11,12 @@ import LineBreak from '../components/lineBreak'
 import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Filter from '../components/filter'
+import IconClose from '../components/iconClose'
+import Modal from 'react-modal'
+import ListModalOpen from '../components/listModalOpen'
 import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
-import { light, mist } from '../utils/colors'
+import { light, mist, white } from '../utils/colors'
 
 class Blog extends React.Component {
 	constructor(props) {
@@ -24,7 +27,9 @@ class Blog extends React.Component {
 			posts: this.props.data.allContentfulBlogPost.edges,
 			currentFilter: '',
 			filteredPosts: [],
+			showModal: false,
 		}
+		this.toggleModal = this.toggleModal.bind(this)
 	}
 
 	filterPosts(e) {
@@ -54,7 +59,15 @@ class Blog extends React.Component {
 		})
 	}
 
+	toggleModal() {
+		this.state.showModal
+			? this.setState({ showModal: false })
+			: this.setState({ showModal: true })
+	}
+
 	componentDidMount() {
+		Modal.setAppElement('#___gatsby')
+
 		const posts = this.props.data.allContentfulBlogPost.edges
 		// eslint-disable-next-line
 		const knownCategories = []
@@ -87,9 +100,26 @@ class Blog extends React.Component {
 			filteredPosts,
 		} = this.state
 
+		const modalStyles = {
+			overlay: {
+				backgroundColor: 'rgba(10, 0, 55, 0.1)',
+				zIndex: 4,
+			},
+			content: {
+				top: 0,
+				right: 0,
+				left: 'none',
+				width: '100vw',
+				height: '100vh',
+				backgroundColor: white,
+				border: 'none',
+				borderRadius: '5px',
+			},
+		}
+
 		return (
 			<Layout location={this.props.location}>
-				<Wrapper padding="0 1em 5em 1em">
+				<Wrapper padding="0 0 5em 0">
 					<Helmet>
 						<title>Blog | Ty Hopp</title>
 						<meta name="title" content="Blog | Ty Hopp" />
@@ -104,13 +134,67 @@ class Blog extends React.Component {
 					</Helmet>
 					<Block>
 						<TextXL center>Blog</TextXL>
-						<TextM center padding="1em 0" style={{ maxWidth: 440 }}>
+						<TextM center padding="1em" style={{ maxWidth: 440 }}>
 							More serious and technical articles about things I encounter as a
 							frontend developer.
 						</TextM>
 					</Block>
 					<Block>
-						<Filter>
+						<ListModalOpen onClick={this.toggleModal} margin="1em 0 2em 0">
+							<TextM
+								style={{
+									fontSize: 15,
+									fontWeight: 'bold',
+									letterSpacing: 0.75,
+								}}
+							>
+								Filter by category
+							</TextM>
+						</ListModalOpen>
+						<Modal
+							isOpen={this.state.showModal}
+							onRequestClose={this.toggleModal}
+							style={modalStyles}
+							contentLabel="Mobile Menu Modal"
+						>
+							<Block onClick={this.toggleModal}>
+								<IconClose />
+							</Block>
+							<Filter show margin="1em 0">
+								<Button
+									onClick={() =>
+										this.setState({ currentFilter: '', showModal: false })
+									}
+									style={{
+										backgroundColor: currentFilter !== '' ? light : mist,
+										margin: '0.5em',
+									}}
+								>
+									All
+								</Button>
+								{loaded &&
+									categories.map(category => {
+										return (
+											<Button
+												bigger
+												key={category}
+												onClick={e => {
+													this.filterPosts(e)
+													this.setState({ showModal: false })
+													window.scrollTo(0, 0)
+												}}
+												style={{
+													backgroundColor:
+														category === currentFilter ? mist : light,
+												}}
+											>
+												{category}
+											</Button>
+										)
+									})}
+							</Filter>
+						</Modal>
+						<Filter show={this.state.showModal ? true : false}>
 							<Button
 								onClick={() => this.setState({ currentFilter: '' })}
 								style={{
@@ -142,14 +226,14 @@ class Blog extends React.Component {
 						<LineBreak />
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
-									<Block key={post.id} margin="3em 0">
+									<Block key={post.id} margin="2.5em 0">
 										<LinkInternal to={`blog/${post.node.slug}`}>
-											<TextL>{post.node.title}</TextL>
+											<TextL article>{post.node.title}</TextL>
 										</LinkInternal>
 										<TextM margin="0.25em 0">
 											{post.node.shortDescription.shortDescription}
 										</TextM>
-										<Filter left margin="0 0 0 -0.5em">
+										<Filter show left margin="0 0 0 -0.5em">
 											{post.node.category.map(category => (
 												<Button
 													key={category}
@@ -173,12 +257,12 @@ class Blog extends React.Component {
 							: posts.map(post => (
 									<Block key={post.id} margin="3em 0">
 										<LinkInternal to={`blog/${post.node.slug}`}>
-											<TextL>{post.node.title}</TextL>
+											<TextL article>{post.node.title}</TextL>
 										</LinkInternal>
 										<TextM margin="0.25em 0">
 											{post.node.shortDescription.shortDescription}
 										</TextM>
-										<Filter left margin="0 0 0 -0.5em">
+										<Filter show left margin="0 0 0 -0.5em">
 											{post.node.category.map(category => (
 												<Button
 													key={category}
