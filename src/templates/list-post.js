@@ -51,13 +51,20 @@ class ListPost extends React.Component {
 					</Helmet>
 					<Wrapper content padding="0.5em 0 2em 0">
 						<Content>
-							<TextXL padding="1em 0 0 0">{title}</TextXL>
-							<Filter article margin="0.75em 0">
+							<TextXL>{title}</TextXL>
+							<TextM margin="1em 0 0.5em 0" style={{ opacity: 0.5 }}>
+								{date}
+							</TextM>
+							<Filter show left article margin="0 0 1em -0.75em">
 								{category.map(item => (
-									<Button article key={item}>
+									<Button
+										article
+										key={item}
+										style={{ fontSize: 15, padding: '0.5em 1.5em' }}
+									>
 										<LinkInternal
 											borderless
-											to="/lists"
+											to="/blog"
 											state={{ filterCategory: item }}
 										>
 											{item}
@@ -65,7 +72,6 @@ class ListPost extends React.Component {
 									</Button>
 								))}
 							</Filter>
-							<TextS>{date}</TextS>
 						</Content>
 						{content &&
 							content.map(block => (

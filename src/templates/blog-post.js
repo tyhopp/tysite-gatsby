@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Wrapper from '../components/wrapper'
 import Content from '../components/content'
-import TextS from '../components/textS'
 import TextM from '../components/textM'
 import TextXL from '../components/textXL'
 import Markdown from 'react-markdown'
@@ -51,10 +50,17 @@ class BlogPost extends React.Component {
 					</Helmet>
 					<Wrapper content padding="0.5em 0 2em 0">
 						<Content>
-							<TextXL padding="1em 0 0 0">{title}</TextXL>
-							<Filter article margin="0.75em 0">
+							<TextXL>{title}</TextXL>
+							<TextM margin="1em 0 0.5em 0" style={{ opacity: 0.5 }}>
+								{date}
+							</TextM>
+							<Filter show left article margin="0 0 1em -0.75em">
 								{category.map(item => (
-									<Button article key={item}>
+									<Button
+										article
+										key={item}
+										style={{ fontSize: 15, padding: '0.5em 1.5em' }}
+									>
 										<LinkInternal
 											borderless
 											to="/blog"
@@ -65,7 +71,6 @@ class BlogPost extends React.Component {
 									</Button>
 								))}
 							</Filter>
-							<TextS>{date}</TextS>
 						</Content>
 						{content &&
 							content.map(block => (
