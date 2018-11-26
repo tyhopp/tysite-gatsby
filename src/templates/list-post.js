@@ -5,7 +5,6 @@ import Wrapper from '../components/wrapper'
 import Content from '../components/content'
 import TextM from '../components/textM'
 import TextXL from '../components/textXL'
-import Markdown from 'react-markdown'
 import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Column from '../components/column'
@@ -77,9 +76,12 @@ class ListPost extends React.Component {
 								<div key={block.body ? block.body.id : block.image.id}>
 									{block.body && (
 										<Content key={block.body.id}>
-											<TextM id="markdown">
-												<Markdown source={block.body.body} />
-											</TextM>
+											<TextM
+												id="markdown"
+												dangerouslySetInnerHTML={{
+													__html: block.body.childMarkdownRemark.html,
+												}}
+											/>
 										</Content>
 									)}
 								</div>
@@ -128,7 +130,9 @@ export const listPostQuery = graphql`
 								... on ContentfulBlockText {
 									body {
 										id
-										body
+										childMarkdownRemark {
+											html
+										}
 									}
 								}
 								... on ContentfulBlockImage {

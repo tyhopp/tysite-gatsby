@@ -12,7 +12,6 @@ module.exports = {
 		`gatsby-plugin-styled-components`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		`gatsby-transformer-remark`,
 		/*
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -28,6 +27,20 @@ module.exports = {
 				spaceId: process.env.CONTENTFUL_SPACE,
 				accessToken: process.env.CONTENTFUL_TOKEN,
 				host: process.env.CONTENTFUL_HOST || `cdn.contentful.com`,
+			},
+		},
+		{
+			resolve: 'gatsby-transformer-remark',
+			options: {
+				plugins: [
+					{
+						resolve: 'gatsby-remark-embed-gist',
+						options: {
+							username: 'tyhopp',
+							includeDefaultCss: true,
+						},
+					},
+				],
 			},
 		},
 		{

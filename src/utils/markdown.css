@@ -9,15 +9,28 @@
 #markdown li {
 	list-style: url('../assets/svg/darkListItem.svg');
 }
-
 #Flyright li {
 	list-style: url('../assets/svg/purpleListItem.svg');
 }
-
 #Edenspiekermann li {
 	list-style: url('../assets/svg/redListItem.svg');
 }
-
 #Bytedance li {
 	list-style: url('../assets/svg/blueListItem.svg');
+}
+
+.gist {
+	margin: 2em 0;
+}
+.gist .highlight {
+	margin: 1em 0;
+}
+.gist .gist-file {
+	border-color: #ececf5;
+}
+.gist .gist-data {
+	border-color: #ececf5;
+}
+.gist .gist-meta {
+	background-color: #ffffff;
 }
