@@ -1,19 +1,20 @@
 import styled from 'styled-components'
 import media from '../utils/media'
-import { light } from '../utils/colors'
+import { white, gray } from '../utils/colors'
 
 const ListModalOpen = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	justify-content: center;
-	background-color: ${light};
+	background-color: ${white};
 	cursor: pointer;
 	user-select: none;
-	margin: 1em 0 0 0;
 	position: sticky;
 	top: 200;
 	z-index: 1;
+	border-top: 1px solid ${gray};
+	border-bottom: 1px solid ${gray};
 
 	${media.desk`
 		display: none;

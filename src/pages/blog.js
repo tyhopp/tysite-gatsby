@@ -140,11 +140,11 @@ class Blog extends React.Component {
 						</TextM>
 					</Block>
 					<Block>
-						<ListModalOpen onClick={this.toggleModal} margin="1em 0 2em 0">
+						<ListModalOpen onClick={this.toggleModal} margin="0em">
 							<TextM
+								padding="0.75em 0"
+								medium
 								style={{
-									fontSize: 15,
-									fontWeight: 'bold',
 									letterSpacing: 0.75,
 								}}
 							>
