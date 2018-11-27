@@ -65,5 +65,11 @@ blockquote {
 	line-height: 30px;
 	color: #151951;
 	padding: 0 0 0 1em;
+	margin: 1.5em 1.25em;
 	border-left: 3px solid #ececf5;
+}
+@media (min-width: 700px) {
+	blockquote {
+		margin: 1.5em 2.5em;
+	}
 }
