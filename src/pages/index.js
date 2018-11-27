@@ -55,7 +55,7 @@ class Index extends React.Component {
 						<TextM>
 							I specialize in the full lifecycle of product development -
 							design, prototype and development. If this sounds like your cup of
-							tea, see more of my work experience below{' '}
+							tea, see my work experience below{' '}
 							<span
 								role="img"
 								aria-label="Finger pointing down emoji"

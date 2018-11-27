@@ -3,8 +3,10 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Wrapper from '../components/wrapper'
 import Content from '../components/content'
-import TextM from '../components/textM'
 import TextXL from '../components/textXL'
+import TextM from '../components/textM'
+import TextS from '../components/textS'
+import Img from 'gatsby-image'
 import LinkInternal from '../components/linkInternal'
 import Button from '../components/button'
 import Column from '../components/column'
@@ -82,6 +84,14 @@ class BlogPost extends React.Component {
 													__html: block.body.childMarkdownRemark.html,
 												}}
 											/>
+										</Content>
+									)}
+									{block.image && (
+										<Content img key={block.image.id}>
+											<Img fluid={block.image.fluid} alt={block.title} />
+											<TextS center padding="1em 0" style={{ opacity: 0.5 }}>
+												{block.image.description}
+											</TextS>
 										</Content>
 									)}
 								</div>

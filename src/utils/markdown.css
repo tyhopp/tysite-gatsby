@@ -37,3 +37,8 @@
 .gist .blob-wrapper::-webkit-scrollbar {
 	display: none;
 }
+@media (max-width: 700px) {
+	.gist .gist-meta a:first-child {
+		display: none;
+	}
+}
