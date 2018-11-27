@@ -55,7 +55,7 @@ p {
 	font-size: 8px;
 	line-height: initial;
 }
-@media (max-width: 700px) {
+@media (min-width: 700px) {
 	.gist .blob-code {
 		font-size: 12px;
 		line-height: 20px;
