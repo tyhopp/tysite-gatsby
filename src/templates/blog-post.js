@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Wrapper from '../components/wrapper'
 import Content from '../components/content'
-import TextXL from '../components/textXL'
+import TextL from '../components/textL'
 import TextM from '../components/textM'
 import TextS from '../components/textS'
 import Img from 'gatsby-image'
@@ -51,7 +51,9 @@ class BlogPost extends React.Component {
 					</Helmet>
 					<Wrapper padding="0.5em 0 2em 0">
 						<Content>
-							<TextXL>{title}</TextXL>
+							<TextL style={{ fontSize: 38, lineHeight: '48px' }}>
+								{title}
+							</TextL>
 							<TextM margin="1em 0 0.5em 0" style={{ opacity: 0.5 }}>
 								{date}
 							</TextM>
