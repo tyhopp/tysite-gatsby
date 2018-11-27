@@ -53,7 +53,7 @@ class Index extends React.Component {
 							products for people.
 						</TextM>
 						<TextM>
-							I specialize in in the full lifecycle of product development -
+							I specialize in the full lifecycle of product development -
 							design, prototype and development. If this sounds like your cup of
 							tea, see more of my work experience below{' '}
 							<span
