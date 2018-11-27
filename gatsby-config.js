@@ -22,14 +22,6 @@ module.exports = {
 		},
 		*/
 		{
-			resolve: `gatsby-source-contentful`,
-			options: {
-				spaceId: process.env.CONTENTFUL_SPACE,
-				accessToken: process.env.CONTENTFUL_TOKEN,
-				host: process.env.CONTENTFUL_HOST || `cdn.contentful.com`,
-			},
-		},
-		{
 			resolve: 'gatsby-transformer-remark',
 			options: {
 				plugins: [
@@ -41,6 +33,14 @@ module.exports = {
 						},
 					},
 				],
+			},
+		},
+		{
+			resolve: `gatsby-source-contentful`,
+			options: {
+				spaceId: process.env.CONTENTFUL_SPACE,
+				accessToken: process.env.CONTENTFUL_TOKEN,
+				host: process.env.CONTENTFUL_HOST || `cdn.contentful.com`,
 			},
 		},
 		{
