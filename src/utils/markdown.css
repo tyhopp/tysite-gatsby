@@ -42,3 +42,7 @@
 		display: none;
 	}
 }
+.gist .blob-code {
+	font-size: 12px;
+}
+
