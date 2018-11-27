@@ -52,14 +52,8 @@ p {
 	}
 }
 .gist .blob-code {
-	font-size: 8px;
-	line-height: initial;
-}
-@media (min-width: 700px) {
-	.gist .blob-code {
-		font-size: 12px;
-		line-height: 20px;
-	}
+	font-size: 12px;
+	line-height: 20px;
 }
 table {
 	tab-size: 2;
