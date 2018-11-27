@@ -51,7 +51,6 @@ p {
 		display: none;
 	}
 }
-/*
 .gist .blob-code td {
 	font-size: initial;
 	line-height: initial;
@@ -62,7 +61,6 @@ p {
 		line-height: 20px;
 	}
 }
-*/
 table {
 	tab-size: 2;
 }
