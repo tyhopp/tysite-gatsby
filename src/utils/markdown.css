@@ -61,4 +61,7 @@ p {
 		line-height: 20px;
 	}
 }
+table {
+	tab-size: 2;
+}
 
