@@ -3,8 +3,7 @@ import { dark, light, mist, white } from '../utils/colors'
 
 const Button = styled.div`
 	display: block;
-	font-family: HK Grotesk Regular, sans-serif;
-	font-weight: bold;
+	font-family: HK Grotesk Medium, sans-serif;
 	letter-spacing: 0.75px;
 	width: fit-content;
 	align-self: center;
