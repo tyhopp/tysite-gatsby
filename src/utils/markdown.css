@@ -34,3 +34,6 @@
 .gist .gist-meta {
 	background-color: #ffffff;
 }
+.gist .blob-wrapper::-webkit-scrollbar {
+	display: none;
+}
