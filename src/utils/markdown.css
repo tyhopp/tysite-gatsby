@@ -51,18 +51,10 @@ p {
 		display: none;
 	}
 }
-/*
-.gist .blob-code td {
-	font-size: initial !important;
-	line-height: initial !important;
+table tbody tr td.blob-code {
+	font-size: 12px !important;
+	line-height: 20px !important;
 }
-@media (min-width: 700px) {
-	.gist .blob-code td {
-		font-size: 12px !important;
-		line-height: 20px !important;
-	}
-}
-*/
 table {
 	tab-size: 2;
 }
