@@ -77,7 +77,7 @@ class BlogPost extends React.Component {
 						</Content>
 						{content &&
 							content.map(block => (
-								<div key={block.body ? block.body.id : block.image.id}>
+								<div key={block.id}>
 									{block.body && (
 										<Content key={block.body.id}>
 											<TextM
@@ -94,6 +94,15 @@ class BlogPost extends React.Component {
 											<TextS center padding="1em 0" style={{ opacity: 0.5 }}>
 												{block.image.description}
 											</TextS>
+										</Content>
+									)}
+									{block.quote && (
+										<Content key={block.quote.id}>
+											<TextM
+												dangerouslySetInnerHTML={{
+													__html: block.quote.childMarkdownRemark.html,
+												}}
+											/>
 										</Content>
 									)}
 								</div>
@@ -140,6 +149,7 @@ export const blogPostQuery = graphql`
 						... on ContentfulContainer {
 							content {
 								... on ContentfulBlockText {
+									id
 									body {
 										id
 										childMarkdownRemark {
@@ -148,6 +158,7 @@ export const blogPostQuery = graphql`
 									}
 								}
 								... on ContentfulBlockImage {
+									id
 									title
 									image {
 										id
