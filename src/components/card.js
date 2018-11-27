@@ -31,7 +31,9 @@ const Card = props => {
 				</TextM>
 				<List id={item.title}>
 					{item.bullets.content.map(bullet => (
-						<Bullet id={bullet.id}>{bullet.body.body}</Bullet>
+						<Bullet key={bullet.id} id={bullet.id}>
+							{bullet.body.body}
+						</Bullet>
 					))}
 				</List>
 				<LinkExternal
