@@ -51,7 +51,7 @@ p {
 		display: none;
 	}
 }
-.gist .blob-code {
+.gist .blob-code td {
 	font-size: 12px;
 }
 
