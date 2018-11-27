@@ -226,7 +226,7 @@ class Blog extends React.Component {
 						<LineBreak />
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
-									<Block key={post.id} margin="2.5em 0">
+									<Block key={post.node.id} margin="2.5em 0">
 										<LinkInternal to={`blog/${post.node.slug}`}>
 											<TextL article>{post.node.title}</TextL>
 										</LinkInternal>
@@ -255,7 +255,7 @@ class Blog extends React.Component {
 									</Block>
 							  ))
 							: posts.map(post => (
-									<Block key={post.id} margin="3em 0">
+									<Block key={post.node.id} margin="3em 0">
 										<LinkInternal to={`blog/${post.node.slug}`}>
 											<TextL article>{post.node.title}</TextL>
 										</LinkInternal>

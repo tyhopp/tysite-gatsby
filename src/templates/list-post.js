@@ -47,7 +47,7 @@ class ListPost extends React.Component {
 						/>
 						<meta property="og:url" content={`https://tyhopp.com/${slug}`} />
 					</Helmet>
-					<Wrapper content padding="0.5em 0 2em 0">
+					<Wrapper padding="0.5em 0 2em 0">
 						<Content>
 							<TextXL>{title}</TextXL>
 							<TextM margin="1em 0 0.5em 0" style={{ opacity: 0.5 }}>
@@ -61,9 +61,9 @@ class ListPost extends React.Component {
 										style={{ fontSize: 15, padding: '0.5em 1.5em' }}
 									>
 										<LinkInternal
-											borderless
 											to="/blog"
 											state={{ filterCategory: item }}
+											style={{ border: 'none' }}
 										>
 											{item}
 										</LinkInternal>
@@ -95,7 +95,7 @@ class ListPost extends React.Component {
 								<Row>
 									<Button onClick={this.copyToClipboard}>Copy URL</Button>
 									<Button>
-										<LinkInternal borderless to="/lists">
+										<LinkInternal to="/lists" style={{ border: 'none' }}>
 											More posts
 										</LinkInternal>
 									</Button>
