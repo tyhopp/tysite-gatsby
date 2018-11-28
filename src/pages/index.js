@@ -103,7 +103,7 @@ class Index extends React.Component {
 								v2 of this site.
 							</LinkExternal>
 						</TextM>
-						<TextM margin="0 0 2em 0">
+						<TextM>
 							I can be found around the web on{' '}
 							<LinkExternal
 								href="https://twitter.com/doestyhopp"
@@ -129,6 +129,13 @@ class Index extends React.Component {
 								LinkedIn
 							</LinkExternal>
 							.
+						</TextM>
+						<TextM margin="0 0 2em 0">
+							Otherwise, feel free to drop me an email at{' '}
+							<LinkExternal href="mailto:hopp.ty.c@gmail.com">
+								hopp.ty.c@gmail.com
+							</LinkExternal>{' '}
+							if it suits!
 						</TextM>
 					</Column>
 				</Wrapper>
