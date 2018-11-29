@@ -18,7 +18,7 @@ const Box = styled(Link)`
 
 	${media.tab`
 		width: initial;
-		padding: 0 3em;
+		padding: 0 3.5em;
 	`}
 	${media.desk`
 		height: 50px;

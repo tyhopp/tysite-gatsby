@@ -8,22 +8,16 @@ import TextM from '../components/textM'
 import TextS from '../components/textS'
 import Img from 'gatsby-image'
 import LinkInternal from '../components/linkInternal'
+import LinkExternal from '../components/linkExternal'
 import Button from '../components/button'
 import Column from '../components/column'
 import Row from '../components/row'
 import Tile from '../components/tile'
 import Filter from '../components/filter'
-import copy from 'copy-to-clipboard'
 import '../utils/markdown.css'
 import { graphql } from 'gatsby'
 
 class BlogPost extends React.Component {
-	copyToClipboard() {
-		const url = `https:/tyhopp.com${window.location.pathname}`
-		copy(url)
-		alert('Copied link to clipboard ✅')
-	}
-
 	render() {
 		const page = this.props.data.allContentfulBlogPost.edges // returns array of Blog Post children
 
@@ -47,7 +41,10 @@ class BlogPost extends React.Component {
 							property="og:description"
 							content={shortDescription.shortDescription}
 						/>
-						<meta property="og:url" content={`https://tyhopp.com/${slug}`} />
+						<meta
+							property="og:url"
+							content={`https://tyhopp.com/blog/${slug}`}
+						/>
 					</Helmet>
 					<Wrapper padding="0.5em 0 2em 0">
 						<Content>
@@ -109,18 +106,62 @@ class BlogPost extends React.Component {
 							))}
 						<Column>
 							<Tile>
-								<TextM center>
-									Thanks for checking my site! Feel free to pass this to a
-									friend if you like it (:
+								<TextM center medium>
+									Thanks for reading{' '}
+									<span
+										role="img"
+										aria-label="Heart emoji"
+										style={{ fontSize: 18, verticalAlign: 'middle' }}
+									>
+										❤️
+									</span>
 								</TextM>
-								<Row>
-									<Button onClick={this.copyToClipboard}>Copy URL</Button>
-									<Button>
-										<LinkInternal to="/blog" style={{ border: 'none' }}>
-											More posts
-										</LinkInternal>
-									</Button>
-								</Row>
+								<TextM>
+									If you're jazzed about this post, feel free to{' '}
+									<LinkExternal
+										href={`https://twitter.com/intent/tweet?text=Found a nice article on ${title.toLowerCase()} ❤️&url=https://tyhopp.com/blog/${slug}&via=doestyhopp`}
+										target="_blank"
+										rel="noopener"
+									>
+										tweet this article
+									</LinkExternal>{' '}
+									<span
+										role="img"
+										aria-label="Blue bird emoji"
+										style={{ fontSize: 18, verticalAlign: 'middle' }}
+									>
+										🐦
+									</span>
+								</TextM>
+								<TextM>
+									If I missed something, please do{' '}
+									<LinkExternal
+										href="https://twitter.com/messages/compose?recipient_id=2500007690"
+										target="_blank"
+										rel="noopener"
+									>
+										drop me a message
+									</LinkExternal>{' '}
+									and I'll fix it{' '}
+									<span
+										role="img"
+										aria-label="Hammer emoji"
+										style={{ fontSize: 18, verticalAlign: 'middle' }}
+									>
+										🔨
+									</span>
+								</TextM>
+								<TextM>
+									Otherwise, read more{' '}
+									<LinkInternal to="/blog">articles</LinkInternal>!{' '}
+									<span
+										role="img"
+										aria-label="Hand writing emoji"
+										style={{ fontSize: 18, verticalAlign: 'middle' }}
+									>
+										✍️
+									</span>
+								</TextM>
 							</Tile>
 						</Column>
 					</Wrapper>

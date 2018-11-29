@@ -12,7 +12,7 @@ const Footer = props => (
 
 const Container = styled.div`
 	padding: 1em;
-	margin: 2em auto 0 auto;
+	margin: 0 auto;
 	text-align: center;
 `
 
