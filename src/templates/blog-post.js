@@ -54,10 +54,10 @@ class BlogPost extends React.Component {
 							<TextL style={{ fontSize: 38, lineHeight: '48px' }}>
 								{title}
 							</TextL>
-							<TextM margin="1em 0 0.5em 0" style={{ opacity: 0.5 }}>
+							<TextM margin="0.5em 0" style={{ opacity: 0.5 }}>
 								{date}
 							</TextM>
-							<Filter show left article margin="0 0 1em -0.75em">
+							<Filter show left article margin="0 0 0 -0.75em">
 								{category.map(item => (
 									<Button
 										article

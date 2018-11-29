@@ -57,7 +57,7 @@ class Layout extends React.Component {
 }
 
 const Master = styled.div`
-	margin: 5.5em 0 0 0;
+	margin: 5em 0 0 0;
 `
 
 export default Layout
