@@ -30,14 +30,14 @@ class Index extends React.Component {
 					<meta name="title" content="Ty Hopp" />
 					<meta
 						name="description"
-						content="Singapore-based frontend developer and designer crafting delightful experiences for the web and native apps."
+						content="Singapore-based frontend developer and designer crafting delightful experiences on the web, iOS and Android."
 					/>
 					<meta name="keywords" content="frontend, developer, designer" />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content="Ty Hopp" />
 					<meta
 						property="og:description"
-						content="Singapore-based frontend developer and designer crafting delightful experiences for the web and native apps."
+						content="Singapore-based frontend developer and designer crafting delightful experiences on the web, iOS and Android."
 					/>
 					<meta property="og:url" content="https://tyhopp.com" />
 				</Helmet>
