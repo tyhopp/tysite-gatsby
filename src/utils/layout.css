@@ -69,4 +69,8 @@ code {
 	color: #cb33b1;
 }
 
+::selection {
+	background-color: #e1ebff;
+}
+
 
