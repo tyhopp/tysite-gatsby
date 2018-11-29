@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import media from '../utils/media'
 import Link from 'gatsby-link'
-import { gray, light, white } from '../utils/colors'
+import { gray, light, white, mist } from '../utils/colors'
 
 const Box = styled(Link)`
 	display: flex;
@@ -25,8 +25,14 @@ const Box = styled(Link)`
 		padding: 0 3.5em;
 	`}
 
+	&:visited {
+		background-color: ${white};
+	}
 	&:hover {
 		background-color: ${light};
+	}
+	&:active {
+		background-color: ${mist};
 	}
 `
 

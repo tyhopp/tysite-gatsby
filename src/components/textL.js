@@ -12,6 +12,9 @@ const TextL = styled.h2`
 	text-align: ${props => (props.center ? `center` : `left`)};
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+	&:visited {
+		color: ${dark};
+	}
 	&:hover {
 		color: ${props => (props.article ? magenta : dark)};
 	}
