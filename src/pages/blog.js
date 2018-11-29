@@ -109,11 +109,12 @@ class Blog extends React.Component {
 				top: 0,
 				right: 0,
 				left: 'none',
-				width: '100vw',
+				width: '90vw',
 				height: '100vh',
 				backgroundColor: white,
 				border: 'none',
 				borderRadius: '5px',
+				padding: '1em',
 			},
 		}
 
@@ -142,7 +143,7 @@ class Blog extends React.Component {
 					<Block>
 						<ListModalOpen onClick={this.toggleModal} margin="0em">
 							<TextM
-								padding="0.75em 0"
+								padding="0.5em 0"
 								medium
 								style={{
 									letterSpacing: 0.75,
@@ -226,7 +227,7 @@ class Blog extends React.Component {
 						<LineBreak />
 						{currentFilter !== ''
 							? filteredPosts.map(post => (
-									<Block key={post.node.id} margin="2.5em 0">
+									<Block key={post.node.id} margin="2em 0">
 										<LinkInternal to={`blog/${post.node.slug}`}>
 											<TextL article>{post.node.title}</TextL>
 										</LinkInternal>
@@ -255,7 +256,7 @@ class Blog extends React.Component {
 									</Block>
 							  ))
 							: posts.map(post => (
-									<Block key={post.node.id} margin="3em 0">
+									<Block key={post.node.id} margin="2em 0">
 										<LinkInternal to={`blog/${post.node.slug}`}>
 											<TextL article>{post.node.title}</TextL>
 										</LinkInternal>
