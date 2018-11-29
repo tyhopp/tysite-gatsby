@@ -25,9 +25,6 @@ const Box = styled(Link)`
 		padding: 0 3.5em;
 	`}
 
-	&:visited {
-		background-color: ${white};
-	}
 	&:hover {
 		background-color: ${light};
 	}

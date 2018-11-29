@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import media from '../utils/media'
 import { white, gray } from '../utils/colors'
 
 const Tile = styled.div`

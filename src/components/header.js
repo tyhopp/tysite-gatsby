@@ -8,6 +8,7 @@ import { gray, light, white } from '../utils/colors'
 
 const Header = props => (
 	<Container>
+		{console.log(props.location.pathname)}
 		<Box
 			to="/"
 			title="Work"

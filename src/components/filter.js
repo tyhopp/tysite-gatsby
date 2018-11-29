@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import media from '../utils/media'
-import { white, mist } from '../utils/media'
+import { white, mist } from '../utils/colors'
 
 const Filter = styled.div`
 	display: ${props => (props.show ? `flex` : `none`)};
@@ -17,9 +17,6 @@ const Filter = styled.div`
 
 	&:visited {
 		background-color: ${white};
-	}
-	&:active {
-		background-color: ${mist};
 	}
 `
 
