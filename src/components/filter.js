@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import media from '../utils/media'
+import { white, mist } from '../utils/media'
 
 const Filter = styled.div`
 	display: ${props => (props.show ? `flex` : `none`)};
@@ -13,6 +14,13 @@ const Filter = styled.div`
 		display: flex;
 		max-width: 550px;
 	`};
+
+	&:visited {
+		background-color: ${white};
+	}
+	&:active {
+		background-color: ${mist};
+	}
 `
 
 export default Filter

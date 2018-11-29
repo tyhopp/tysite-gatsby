@@ -19,6 +19,9 @@ const Button = styled.div`
 	line-height: 20px;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+	&:visted {
+		background-color: ${props => (props.accent ? props.accent : light)};
+	}
 	&:hover {
 		background-color: ${props =>
 			props.secondAccent ? props.secondAccent : mist};

@@ -135,9 +135,8 @@ class Blog extends React.Component {
 					</Helmet>
 					<Block>
 						<TextXL center>Blog</TextXL>
-						<TextM center padding="1em" style={{ maxWidth: 440 }}>
-							Technical articles about things I encounter as a frontend
-							developer and designer.
+						<TextM center padding="1em" style={{ maxWidth: 300 }}>
+							Technical articles about frontend development and design.
 						</TextM>
 					</Block>
 					<Block>
