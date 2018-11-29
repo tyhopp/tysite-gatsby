@@ -9,6 +9,10 @@ p {
 	}
 }
 
+#markdown {
+	padding: 0.5em 0;
+}
+
 #markdown a {
 	text-decoration: none;
 	border-bottom: 1px solid #151951;

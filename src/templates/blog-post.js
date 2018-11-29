@@ -76,7 +76,7 @@ class BlogPost extends React.Component {
 								<div key={block.id}>
 									{block.body && (
 										<Content key={block.body.id}>
-											<TextM
+											<div
 												id="markdown"
 												dangerouslySetInnerHTML={{
 													__html: block.body.childMarkdownRemark.html,
