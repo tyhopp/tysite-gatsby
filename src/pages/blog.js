@@ -114,7 +114,7 @@ class Blog extends React.Component {
 				backgroundColor: white,
 				border: 'none',
 				borderRadius: '5px',
-				padding: '1em',
+				padding: '3em 1em',
 			},
 		}
 

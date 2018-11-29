@@ -11,6 +11,7 @@ const Filter = styled.div`
 
 	${media.desk`
 		display: flex;
+		max-width: 550px;
 	`};
 `
 
