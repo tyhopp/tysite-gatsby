@@ -186,6 +186,7 @@ export const blogPostQuery = graphql`
 					}
 					category
 					content {
+						id
 						... on ContentfulContainer {
 							content {
 								... on ContentfulBlockText {
