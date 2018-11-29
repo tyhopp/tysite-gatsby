@@ -4,7 +4,6 @@ import media from '../utils/media'
 import Box from './box'
 import EmojiCardBox from '../emoji/emojiCardBox'
 import EmojiHandWriting from '../emoji/emojiHandWriting'
-import EmojiHeart from '../emoji/emojiHeart'
 import { gray, light, white } from '../utils/colors'
 
 const Header = props => (
@@ -22,18 +21,9 @@ const Header = props => (
 			color={
 				props.location.pathname.substring(0, 5) === '/blog' ? light : white
 			}
+			style={{ borderRight: `1px solid ${gray}` }}
 		>
 			<EmojiHandWriting />
-		</Box>
-		<Box
-			to="/lists"
-			title="Lists"
-			style={{ borderRight: `1px solid ${gray}` }}
-			color={
-				props.location.pathname.substring(0, 6) === '/lists' ? light : white
-			}
-		>
-			<EmojiHeart />
 		</Box>
 	</Container>
 )

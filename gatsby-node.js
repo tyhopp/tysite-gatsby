@@ -57,62 +57,6 @@ const processBlogPosts = ({ graphql, actions }) => {
   })
 }
 
-const processListPosts = ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  return new Promise((resolve, reject) => {
-    graphql(
-      `
-        {
-          allContentfulListPost {
-            edges {
-              node {
-                id
-                contentful_id
-                title
-                slug
-              }
-            }
-          }
-        }
-      `
-    ).then(result => {
-      if (result.errors) {
-        console.error(result.errors)
-        reject(result.errors)
-      }
-
-      _.each(
-        _.groupBy(
-          result.data.allContentfulListPost.edges,
-          'node.contentful_id'
-        ),
-        (edges, contentfulId) => {
-          _.each(edges, edge => {
-            const pageTemplate = path.resolve(`src/templates/list-post.js`)
-
-            createPage({
-              path: `/lists/${edge.node.slug}`,
-              component: slash(pageTemplate),
-              context: {
-                id: edge.node.id,
-                contentfulId: edge.node.contentful_id,
-                title: edge.node.title,
-                slug: edge.node.slug,
-                content: edge.node.content,
-              },
-            })
-          })
-        }
-      )
-      resolve()
-    })
-  })
-}
-
 exports.createPages = ({ graphql, actions }) => {
-  Promise.all([
-    processBlogPosts({ graphql, actions }),
-    processListPosts({ graphql, actions }),
-  ])
+  Promise.all([processBlogPosts({ graphql, actions })])
 }
