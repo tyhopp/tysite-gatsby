@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import { selectFavicon } from '../utils/favicon'
 import '../utils/layout.css'
 
 import HKGroteskPro from '../assets/fonts/HKGroteskPro-Regular.woff2'
@@ -43,7 +42,6 @@ class Layout extends React.Component {
 					<meta name="msapplication-TileColor" content="#2d89ef" />
 					<meta name="theme-color" content="#ffffff" />
 				</Helmet>
-				{selectFavicon(this.props.location)}
 				<Header location={this.props.location} />
 				{children}
 				{this.props.location.pathname === '/blog' ||
