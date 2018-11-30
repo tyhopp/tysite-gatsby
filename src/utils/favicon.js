@@ -1,20 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-// Card box favicon
-import boxFaviconApple from 'https://tyhopp.com/boxAppleTouchIcon.png'
-import boxFavicon48 from 'https://tyhopp.com/boxFavicon-48x48.png'
-import boxFavicon32 from 'https://tyhopp.com/boxFavicon-32x32.png'
-import boxFavicon16 from 'https://tyhopp.com/boxFavicon-16x16.png'
-import boxShortcutIcon from 'https://tyhopp.com/boxFavicon.ico'
-
-// Writing hand favicon
-import handFaviconApple from 'https://tyhopp.com/handAppleTouchIcon.png'
-import handFavicon48 from 'https://tyhopp.com/handFavicon-48x48.png'
-import handFavicon32 from 'https://tyhopp.com/handFavicon-32x32.png'
-import handFavicon16 from 'https://tyhopp.com/handFavicon-16x16.png'
-import handShortcutIcon from 'https://tyhopp.com/handFavicon.ico'
-
 // Function to change favicons based on matching routes
 export const selectFavicon = location => {
 	// If route is index, return box favicon
@@ -24,13 +10,32 @@ export const selectFavicon = location => {
 				<link
 					rel="apple-touch-icon-precomposed"
 					sizes="180x180"
-					href={boxFaviconApple}
+					href="https://tyhopp.com/boxAppleTouchIcon.png"
 				/>
-				<link rel="apple-touch-icon" sizes="180x180" href={boxFaviconApple} />
-				<link rel="icon" type="image/png" sizes="48x48" href={boxFavicon48} />
-				<link rel="icon" type="image/png" sizes="32x32" href={boxFavicon32} />
-				<link rel="icon" type="image/png" sizes="16x16" href={boxFavicon16} />
-				<link rel="shortcut icon" href={boxShortcutIcon} />
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="https://tyhopp.com/boxAppleTouchIcon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="48x48"
+					href="https://tyhopp.com/boxFavicon-48x48.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="https://tyhopp.com/boxFavicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="https://tyhopp.com/boxFavicon-16x16.png"
+				/>
+				<link rel="shortcut icon" href="https://tyhopp.com/boxFavicon.ico" />
 			</Helmet>
 		)
 
@@ -41,13 +46,32 @@ export const selectFavicon = location => {
 				<link
 					rel="apple-touch-icon-precomposed"
 					sizes="180x180"
-					href={handFaviconApple}
+					href="https://tyhopp.com/handAppleTouchIcon.png"
 				/>
-				<link rel="apple-touch-icon" sizes="180x180" href={handFaviconApple} />
-				<link rel="icon" type="image/png" sizes="48x48" href={handFavicon48} />
-				<link rel="icon" type="image/png" sizes="32x32" href={handFavicon32} />
-				<link rel="icon" type="image/png" sizes="16x16" href={handFavicon16} />
-				<link rel="shortcut icon" href={handShortcutIcon} />
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="https://tyhopp.com/handAppleTouchIcon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="48x48"
+					href="https://tyhopp.com/handFavicon-48x48.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="https://tyhopp.com/handFavicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="https://tyhopp.com/handFavicon-16x16.png"
+				/>
+				<link rel="shortcut icon" href="https://tyhopp.com/handFavicon.ico" />
 			</Helmet>
 		)
 	}
