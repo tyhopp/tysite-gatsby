@@ -3,10 +3,8 @@ import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import { selectFavicon } from '../utils/favicon'
 import '../utils/layout.css'
-
-import HKGroteskPro from '../assets/fonts/HKGroteskPro-Regular.woff2'
-import QuincyCF from '../assets/fonts/QuincyCF-ExtraBold.woff2'
 
 class Layout extends React.Component {
 	render() {
@@ -23,25 +21,20 @@ class Layout extends React.Component {
 					/>
 					<link
 						rel="preload"
-						href={HKGroteskPro}
+						href="https://tyhopp.com/HKGroteskPro-Regular.woff2"
 						type="font/woff2"
 						crossorigin="anonymous"
 						as="font"
 					/>
 					<link
 						rel="preload"
-						href={QuincyCF}
+						href="https://tyhopp.com/QuincyCF-ExtraBold.woff2"
 						type="font/woff2"
 						crossorigin="anonymous"
 						as="font"
 					/>
-					<meta
-						name="msapplication-config"
-						content={`../assets/favicon/browserconfig.xml`}
-					/>
-					<meta name="msapplication-TileColor" content="#2d89ef" />
-					<meta name="theme-color" content="#ffffff" />
 				</Helmet>
+				{selectFavicon(this.props.location)}
 				<Header location={this.props.location} />
 				{children}
 				{this.props.location.pathname === '/blog' ||
