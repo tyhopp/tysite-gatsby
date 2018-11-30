@@ -2,18 +2,18 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 // Card box favicon
-import boxFaviconApple from '../assets/favicon/boxAppleTouchIcon.png'
-import boxFavicon48 from '../assets/favicon/boxFavicon-48x48.png'
-import boxFavicon32 from '../assets/favicon/boxFavicon-32x32.png'
-import boxFavicon16 from '../assets/favicon/boxFavicon-16x16.png'
-import boxShortcutIcon from '../assets/favicon/boxFavicon.ico'
+import boxFaviconApple from '../../static/boxAppleTouchIcon.png'
+import boxFavicon48 from '../../static/boxFavicon-48x48.png'
+import boxFavicon32 from '../../static/boxFavicon-32x32.png'
+import boxFavicon16 from '../../static/boxFavicon-16x16.png'
+import boxShortcutIcon from '../../static/boxFavicon.ico'
 
 // Writing hand favicon
-import handFaviconApple from '../assets/favicon/handAppleTouchIcon.png'
-import handFavicon48 from '../assets/favicon/handFavicon-48x48.png'
-import handFavicon32 from '../assets/favicon/handFavicon-32x32.png'
-import handFavicon16 from '../assets/favicon/handFavicon-16x16.png'
-import handShortcutIcon from '../assets/favicon/handFavicon.ico'
+import handFaviconApple from '../../static/handAppleTouchIcon.png'
+import handFavicon48 from '../../static/handFavicon-48x48.png'
+import handFavicon32 from '../../static/handFavicon-32x32.png'
+import handFavicon16 from '../../static/handFavicon-16x16.png'
+import handShortcutIcon from '../../static/handFavicon.ico'
 
 // Function to change favicons based on matching routes
 export const selectFavicon = location => {

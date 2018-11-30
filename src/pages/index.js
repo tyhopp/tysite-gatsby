@@ -9,7 +9,7 @@ import TextM from '../components/textM'
 import LinkExternal from '../components/linkExternal'
 import Card from '../components/card'
 import EmojiWaveHand from '../emoji/emojiWaveHand'
-import OpenGraphCard from '../assets/img/openGraphCard.png'
+import OpenGraphCard from '../../static/openGraphCard.png'
 import { graphql } from 'gatsby'
 
 class Index extends React.Component {
@@ -44,6 +44,8 @@ class Index extends React.Component {
 					<meta property="og:image" content={OpenGraphCard} />
 					<meta property="og:image:width" content="1200" />
 					<meta property="og:image:height" content="600" />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:creator" content="@doestyhopp" />
 				</Helmet>
 				<Wrapper padding="0 1em">
 					<Column margin="0 auto" style={{ maxWidth: 440 }}>

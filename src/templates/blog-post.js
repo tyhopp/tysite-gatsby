@@ -13,7 +13,7 @@ import Button from '../components/button'
 import Column from '../components/column'
 import Tile from '../components/tile'
 import Filter from '../components/filter'
-import OpenGraphCard from '../assets/img/openGraphCard.png'
+import OpenGraphCard from '../../static/openGraphCard.png'
 import '../utils/markdown.css'
 import { graphql } from 'gatsby'
 
