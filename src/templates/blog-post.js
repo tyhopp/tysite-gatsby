@@ -43,6 +43,8 @@ class BlogPost extends React.Component {
 							content={shortDescription.shortDescription}
 						/>
 						<meta property="og:image" content={OpenGraphCard} />
+						<meta property="og:image:width" content="1200" />
+						<meta property="og:image:height" content="600" />
 						<meta
 							property="og:url"
 							content={`https://tyhopp.com/blog/${slug}`}

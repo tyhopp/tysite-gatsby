@@ -137,6 +137,8 @@ class Blog extends React.Component {
 						/>
 						<meta property="og:url" content="https://tyhopp.com/blog" />
 						<meta property="og:image" content={OpenGraphCard} />
+						<meta property="og:image:width" content="1200" />
+						<meta property="og:image:height" content="600" />
 					</Helmet>
 					<Block>
 						<TextXL center>Blog</TextXL>
