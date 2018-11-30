@@ -13,7 +13,6 @@ import Button from '../components/button'
 import Column from '../components/column'
 import Tile from '../components/tile'
 import Filter from '../components/filter'
-import OpenGraphCard from '../../static/openGraphCard.png'
 import '../utils/markdown.css'
 import { graphql } from 'gatsby'
 
@@ -42,7 +41,10 @@ class BlogPost extends React.Component {
 							property="og:description"
 							content={shortDescription.shortDescription}
 						/>
-						<meta property="og:image" content={OpenGraphCard} />
+						<meta
+							property="og:image"
+							content="https://tyhopp.com/openGraphCard.png"
+						/>
 						<meta property="og:image:width" content="1200" />
 						<meta property="og:image:height" content="600" />
 						<meta

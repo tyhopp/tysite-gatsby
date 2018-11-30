@@ -2,18 +2,18 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 // Card box favicon
-import boxFaviconApple from '../../static/boxAppleTouchIcon.png'
-import boxFavicon48 from '../../static/boxFavicon-48x48.png'
-import boxFavicon32 from '../../static/boxFavicon-32x32.png'
-import boxFavicon16 from '../../static/boxFavicon-16x16.png'
-import boxShortcutIcon from '../../static/boxFavicon.ico'
+import boxFaviconApple from 'https://tyhopp.com/boxAppleTouchIcon.png'
+import boxFavicon48 from 'https://tyhopp.com/boxFavicon-48x48.png'
+import boxFavicon32 from 'https://tyhopp.com/boxFavicon-32x32.png'
+import boxFavicon16 from 'https://tyhopp.com/boxFavicon-16x16.png'
+import boxShortcutIcon from 'https://tyhopp.com/boxFavicon.ico'
 
 // Writing hand favicon
-import handFaviconApple from '../../static/handAppleTouchIcon.png'
-import handFavicon48 from '../../static/handFavicon-48x48.png'
-import handFavicon32 from '../../static/handFavicon-32x32.png'
-import handFavicon16 from '../../static/handFavicon-16x16.png'
-import handShortcutIcon from '../../static/handFavicon.ico'
+import handFaviconApple from 'https://tyhopp.com/handAppleTouchIcon.png'
+import handFavicon48 from 'https://tyhopp.com/handFavicon-48x48.png'
+import handFavicon32 from 'https://tyhopp.com/handFavicon-32x32.png'
+import handFavicon16 from 'https://tyhopp.com/handFavicon-16x16.png'
+import handShortcutIcon from 'https://tyhopp.com/handFavicon.ico'
 
 // Function to change favicons based on matching routes
 export const selectFavicon = location => {

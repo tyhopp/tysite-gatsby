@@ -14,7 +14,6 @@ import Filter from '../components/filter'
 import IconClose from '../components/iconClose'
 import Modal from 'react-modal'
 import ListModalOpen from '../components/listModalOpen'
-import OpenGraphCard from '../../static/openGraphCard.png'
 import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
 import { light, mist, white } from '../utils/colors'
@@ -136,7 +135,10 @@ class Blog extends React.Component {
 							content="All blog posts from Ty Hopp"
 						/>
 						<meta property="og:url" content="https://tyhopp.com/blog" />
-						<meta property="og:image" content={OpenGraphCard} />
+						<meta
+							property="og:image"
+							content="https://tyhopp.com/openGraphCard.png"
+						/>
 						<meta property="og:image:width" content="1200" />
 						<meta property="og:image:height" content="600" />
 					</Helmet>
