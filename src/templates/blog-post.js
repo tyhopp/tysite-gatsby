@@ -13,6 +13,7 @@ import Button from '../components/button'
 import Column from '../components/column'
 import Tile from '../components/tile'
 import Filter from '../components/filter'
+import OpenGraphCard from '../assets/img/openGraphCard.png'
 import '../utils/markdown.css'
 import { graphql } from 'gatsby'
 
@@ -34,8 +35,17 @@ class BlogPost extends React.Component {
 							content={shortDescription.shortDescription}
 						/>
 						<meta name="keywords" content={category.join(', ')} />
+						<meta name="twitter:card" content="summary_large_image" />
+						<meta name="twitter:creator" content="@doestyhopp" />
+						<meta name="twitter:title" content={title} />
+						<meta
+							name="twitter:description"
+							content={shortDescription.shortDescription}
+						/>
+						<meta name="twitter:image" content={OpenGraphCard} />
 						<meta property="og:type" content="article" />
 						<meta property="og:title" content={title} />
+						<meta property="og:image" content={OpenGraphCard} />
 						<meta
 							property="og:description"
 							content={shortDescription.shortDescription}

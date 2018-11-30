@@ -36,7 +36,6 @@ class Layout extends React.Component {
 						crossorigin="anonymous"
 						as="font"
 					/>
-
 					<meta
 						name="msapplication-config"
 						content={`../assets/favicon/browserconfig.xml`}
