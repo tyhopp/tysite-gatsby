@@ -43,13 +43,12 @@ class BlogPost extends React.Component {
 							content={shortDescription.shortDescription}
 						/>
 						<meta name="twitter:image" content={OpenGraphCard} />
-						<meta property="og:type" content="article" />
 						<meta property="og:title" content={title} />
-						<meta property="og:image" content={OpenGraphCard} />
 						<meta
 							property="og:description"
 							content={shortDescription.shortDescription}
 						/>
+						<meta property="og:image" content={OpenGraphCard} />
 						<meta
 							property="og:url"
 							content={`https://tyhopp.com/blog/${slug}`}
