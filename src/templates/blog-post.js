@@ -35,7 +35,7 @@ class BlogPost extends React.Component {
 							content={shortDescription.shortDescription}
 						/>
 						<meta name="keywords" content={category.join(', ')} />
-						<meta name="twitter:card" content="summary_large_image" />
+						<meta name="twitter:card" content="summary" />
 						<meta name="twitter:creator" content="@doestyhopp" />
 						<meta property="og:title" content={title} />
 						<meta

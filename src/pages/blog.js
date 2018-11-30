@@ -14,6 +14,7 @@ import Filter from '../components/filter'
 import IconClose from '../components/iconClose'
 import Modal from 'react-modal'
 import ListModalOpen from '../components/listModalOpen'
+import OpenGraphCard from '../assets/img/openGraphCard.png'
 import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
 import { light, mist, white } from '../utils/colors'
@@ -124,7 +125,10 @@ class Blog extends React.Component {
 					<Helmet>
 						<title>Blog | Ty Hopp</title>
 						<meta name="title" content="Blog | Ty Hopp" />
-						<meta name="description" content="All blog posts from Ty Hopp" />
+						<meta
+							name="description"
+							content="Technical articles about frontend development and design."
+						/>
 						<meta property="og:type" content="website" />
 						<meta property="og:title" content="Ty Hopp" />
 						<meta
@@ -132,6 +136,7 @@ class Blog extends React.Component {
 							content="All blog posts from Ty Hopp"
 						/>
 						<meta property="og:url" content="https://tyhopp.com/blog" />
+						<meta property="og:image" content={OpenGraphCard} />
 					</Helmet>
 					<Block>
 						<TextXL center>Blog</TextXL>
