@@ -3,9 +3,11 @@ require('dotenv').config()
 module.exports = {
 	siteMetadata: {
 		title: 'Ty Hopp',
+		description:
+			'Singapore-based frontend developer and designer crafting delightful experiences on the web, iOS and Android.',
 		author: 'Ty Hopp',
 		developer: 'Ty Hopp',
-		siteUrl: 'https://tyhopp.me',
+		siteUrl: 'https://tyhopp.com',
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -58,5 +60,80 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-remove-serviceworker`,
+		{
+			resolve: `gatsby-plugin-feed`,
+			options: {
+				query: `
+	        {
+	          site {
+	            siteMetadata {
+	              title
+	              description
+	              siteUrl
+	              site_url: siteUrl
+	            }
+	          }
+	        }
+	      `,
+				feeds: [
+					{
+						serialize: ({ query: { site, allContentfulBlogPost } }) => {
+							return allContentfulBlogPost.edges.map(edge => {
+								return Object.assign({}, edge.node.frontmatter, {
+									title: edge.node.title,
+									description: edge.node.shortDescription.shortDescription,
+									date: edge.node.date,
+									categories: edge.node.category,
+									url: `${site.siteMetadata.siteUrl}/${edge.node.slug}`,
+									guid: edge.node.id,
+									custom_elements: [
+										{
+											'content:encoded': edge.node.content.content.map(
+												block => block.body.childMarkdownRemark.html
+											),
+										},
+									],
+								})
+							})
+						},
+						query: `
+	            {
+	              allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
+									edges {
+										node {
+											id
+											slug
+											title
+											date
+											shortDescription {
+												shortDescription
+											}
+											category
+											content {
+												... on ContentfulContainer {
+													content {
+														... on ContentfulBlockText {
+															id
+															body {
+																id
+																childMarkdownRemark {
+																	html
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+	            }
+	          `,
+						output: '/rss.xml',
+						title: "Ty Hopp's RSS Feed",
+					},
+				],
+			},
+		},
 	],
 }

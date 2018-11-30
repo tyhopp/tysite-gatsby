@@ -5,8 +5,8 @@ import Wrapper from '../components/wrapper'
 import Content from '../components/content'
 import TextL from '../components/textL'
 import TextM from '../components/textM'
-import TextS from '../components/textS'
-import Img from 'gatsby-image'
+// import TextS from '../components/textS'
+// import Img from 'gatsby-image'
 import LinkInternal from '../components/linkInternal'
 import LinkExternal from '../components/linkExternal'
 import Button from '../components/button'
@@ -84,6 +84,7 @@ class BlogPost extends React.Component {
 											/>
 										</Content>
 									)}
+									{/*
 									{block.image && (
 										<Content img key={block.image.id}>
 											<Img fluid={block.image.fluid} alt={block.title} />
@@ -92,6 +93,7 @@ class BlogPost extends React.Component {
 											</TextS>
 										</Content>
 									)}
+									*/}
 									{block.quote && (
 										<Content key={block.quote.id}>
 											<TextM
@@ -195,17 +197,6 @@ export const blogPostQuery = graphql`
 										id
 										childMarkdownRemark {
 											html
-										}
-									}
-								}
-								... on ContentfulBlockImage {
-									id
-									title
-									image {
-										id
-										description
-										fluid {
-											...GatsbyContentfulFluid_withWebp
 										}
 									}
 								}

@@ -76,9 +76,9 @@ blockquote {
 	font-size: 18px;
 	line-height: 28px;
 	color: #151951;
-	padding: 0 0 0 1em;
+	padding: 0 0 0 0.75em;
 	margin: 1.5em 1.25em;
-	border-left: 3px solid #ececf5;
+	border-left: 2px solid #ececf5;
 }
 @media (min-width: 700px) {
 	blockquote {
