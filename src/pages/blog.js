@@ -182,7 +182,7 @@ class Blog extends React.Component {
 									All
 								</Button>
 								{loaded &&
-									categories.map(category => {
+									categories.sort().map(category => {
 										return (
 											<Button
 												bigger
@@ -214,7 +214,7 @@ class Blog extends React.Component {
 								All
 							</Button>
 							{loaded &&
-								categories.map(category => {
+								categories.sort().map(category => {
 									return (
 										<Button
 											key={category}
