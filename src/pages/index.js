@@ -30,14 +30,14 @@ class Index extends React.Component {
 					<meta name="title" content="Ty Hopp" />
 					<meta
 						name="description"
-						content="Singapore-based frontend developer and designer crafting delightful experiences on the web, iOS and Android."
+						content="Singapore-based software developer and designer crafting delightful experiences on the web, iOS and Android."
 					/>
-					<meta name="keywords" content="frontend, developer, designer" />
+					<meta name="keywords" content="software, developer, designer" />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content="Ty Hopp" />
 					<meta
 						property="og:description"
-						content="Singapore-based frontend developer and designer crafting delightful experiences on the web, iOS and Android."
+						content="Singapore-based software developer and designer crafting delightful experiences on the web, iOS and Android."
 					/>
 					<meta property="og:url" content="https://tyhopp.com" />
 					<meta
@@ -56,7 +56,7 @@ class Index extends React.Component {
 							<EmojiWaveHand />
 						</Row>
 						<TextM>
-							I’m a Singapore-based frontend developer looking for a strong team
+							I’m a Singapore-based software developer looking for a strong team
 							to grow with. I care about building pragmatic, culturally informed
 							products for people.
 						</TextM>
@@ -83,7 +83,7 @@ class Index extends React.Component {
 							>
 								Top Rated freelancer on Upwork
 							</LinkExternal>{' '}
-							for UI/UX design and frontend developement.
+							for UI/UX design and software developement.
 						</TextM>
 						<TextM>
 							Other things I've built include{' '}

@@ -4,7 +4,7 @@ module.exports = {
 	siteMetadata: {
 		title: 'Ty Hopp',
 		description:
-			'Singapore-based frontend developer and designer crafting delightful experiences on the web, iOS and Android.',
+			'Singapore-based software developer and designer crafting delightful experiences on the web, iOS and Android.',
 		author: 'Ty Hopp',
 		developer: 'Ty Hopp',
 		siteUrl: 'https://tyhopp.com',
