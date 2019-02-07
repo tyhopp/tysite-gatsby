@@ -82,7 +82,7 @@ class Index extends React.Component {
             </TextM>
             {items &&
               items.map(item => <Card item={item} key={item.node.id} />)}
-            <TextM>
+            <TextM style={{ margin: '0 0.5em' }}>
               Other things I've built include{' '}
               <LinkExternal
                 href="https://tenx.tech"
@@ -108,7 +108,7 @@ class Index extends React.Component {
                 v2 of this site.
               </LinkExternal>
             </TextM>
-            <TextM>
+            <TextM style={{ margin: '0 0.5em' }}>
               I can be found around the web on{' '}
               <LinkExternal
                 href="https://twitter.com/doestyhopp"
@@ -135,7 +135,7 @@ class Index extends React.Component {
               </LinkExternal>
               .
             </TextM>
-            <TextM margin="0 0 2em 0">
+            <TextM margin="0 0.5em 2em 0.5em">
               Otherwise, feel free to drop me an email at{' '}
               <LinkExternal href="mailto:hopp.ty.c@gmail.com">
                 hopp.ty.c@gmail.com
