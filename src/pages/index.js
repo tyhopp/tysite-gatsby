@@ -69,8 +69,8 @@ class Index extends React.Component {
             </TextM>
             <TextM style={{ margin: '0 0.5em' }}>
               I like to participate in the full lifecycle of product development
-              - design, prototype and development. If this sounds interesting
-              check out <LinkInternal to="/blog">my blog</LinkInternal> or past
+              - design, prototype and development. If this sounds interesting,
+              check out my <LinkInternal to="/blog">blog</LinkInternal> or past
               work experience below{' '}
               <span
                 role="img"
