@@ -1,87 +1,84 @@
 /* Style markdown coming from Contentful */
 
 p {
-	font-size: 18px;
-}
-@media (min-width: 700px) {
-	p {
-		font-size: 17px;
-	}
+  font-size: 17px;
+  line-height: 32px;
 }
 
 #markdown {
-	padding: 0.5em 0;
+  padding: 0.5em 0;
 }
 #markdown a {
-	text-decoration: none;
-	border-bottom: 1px solid #151951;
-	color: #151951;
+  text-decoration: none;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid #151951;
+  color: #151951;
 }
 #markdown li {
-	font-size: 18px;
-	line-height: 28px;
-	color: #151951;
-	padding: 0.1em 0;
-	margin: auto;
-	list-style: url('../assets/svg/darkListItem.svg');
+  font-size: 17px;
+  line-height: 32px;
+  color: #151951;
+  padding: 0.5em 0;
+  margin: auto;
+  list-style: url('../assets/svg/darkListItem.svg');
 }
 @media (min-width: 700px) {
-	#markdown li {
-		font-size: 17px;
-	}
+  #markdown li {
+    font-size: 17px;
+  }
 }
 #Flyright li {
-	list-style: url('../assets/svg/purpleListItem.svg');
+  list-style: url('../assets/svg/purpleListItem.svg');
 }
 #Edenspiekermann li {
-	list-style: url('../assets/svg/redListItem.svg');
+  list-style: url('../assets/svg/redListItem.svg');
 }
 #Bytedance li {
-	list-style: url('../assets/svg/blueListItem.svg');
+  list-style: url('../assets/svg/blueListItem.svg');
 }
 
 .gist {
-	margin: 2em 0;
+  margin: 2em 0;
 }
 .gist .highlight {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 .gist .gist-file {
-	border-color: #ececf5;
+  border-color: #ececf5;
 }
 .gist .gist-data {
-	border-color: #ececf5;
+  border-color: #ececf5;
 }
 .gist .gist-meta {
-	background-color: #ffffff;
+  background-color: #ffffff;
 }
 .gist .blob-wrapper::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 @media (max-width: 700px) {
-	.gist .gist-meta a:first-child {
-		display: none;
-	}
+  .gist .gist-meta a:first-child {
+    display: none;
+  }
 }
 table {
-	text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	tab-size: 2;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  tab-size: 2;
 }
 
 blockquote {
-	font-family: HK Grotesk Italic, sans-serif;
-	font-size: 18px;
-	line-height: 28px;
-	color: #151951;
-	padding: 0 0 0 0.75em;
-	margin: 1.5em 1.25em;
-	border-left: 2px solid #ececf5;
+  font-family: Fira Sans, sans-serif;
+  font-size: 17px;
+  line-height: 30px;
+  color: #151951;
+  padding: 0 0 0 0.75em;
+  margin: 1.5em 1.25em;
+  border-left: 2px solid #ececf5;
 }
 @media (min-width: 700px) {
-	blockquote {
-		margin: 1.5em 2.5em;
-	}
+  blockquote {
+    margin: 1.5em 2.5em;
+  }
 }

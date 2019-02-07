@@ -1,76 +1,55 @@
 @font-face {
-	font-family: 'HK Grotesk Regular';
-	font-display: block;
-	src: url('../assets/fonts/HKGroteskPro-Regular.woff2') format('woff2'),
-		url('../assets/fonts/HKGroteskPro-Regular.woff') format('woff'),
-		url('../assets/fonts/HKGroteskPro-Regular.ttf') format('truetype'),
-		url('../assets/fonts/HKGroteskPro-Regular.otf') format('opentype');
+  font-family: 'Fira Sans';
+  font-display: block;
+  src: url('../assets/fonts/FiraSans-Regular.ttf') format('truetype');
 }
 @font-face {
-	font-family: 'HK Grotesk Italic';
-	font-display: block;
-	src: url('../assets/fonts/HKGroteskPro-Italic.woff2') format('woff2'),
-		url('../assets/fonts/HKGroteskPro-Italic.woff') format('woff'),
-		url('../assets/fonts/HKGroteskPro-Italic.ttf') format('truetype'),
-		url('../assets/fonts/HKGroteskPro-Italic.otf') format('opentype');
-}
-@font-face {
-	font-family: 'HK Grotesk Medium';
-	font-display: block;
-	src: url('../assets/fonts/HKGroteskPro-Medium.woff2') format('woff2'),
-		url('../assets/fonts/HKGroteskPro-Medium.woff') format('woff'),
-		url('../assets/fonts/HKGroteskPro-Medium.ttf') format('truetype'),
-		url('../assets/fonts/HKGroteskPro-Medium.otf') format('opentype');
-}
-@font-face {
-	font-family: 'Quincy';
-	font-display: block;
-	src: url('../assets/fonts/QuincyCF-ExtraBold.woff2') format('woff2'),
-		url('../assets/fonts/QuincyCF-ExtraBold.woff') format('woff'),
-		url('../assets/fonts/QuincyCF-ExtraBold.otf') format('opentype');
+  font-family: 'Quincy';
+  font-display: block;
+  src: url('../assets/fonts/QuincyCF-ExtraBold.woff2') format('woff2'),
+    url('../assets/fonts/QuincyCF-ExtraBold.woff') format('woff'),
+    url('../assets/fonts/QuincyCF-ExtraBold.otf') format('opentype');
 }
 
 * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
-	position: relative;
-	overflow-x: hidden;
-	overflow-y: scroll;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
-	font-family: 'HK Grotesk Regular', sans-serif;
-	color: #151951;
-	margin: 0;
-	overflow-x: hidden;
+  font-family: 'Fira Sans', sans-serif;
+  color: #151951;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1,
 h2,
 h3 {
-	font-family: 'Quincy', serif;
-	font-weight: normal;
-	color: #151951;
+  font-family: 'Quincy', serif;
+  font-weight: normal;
+  color: #151951;
 }
 
 p {
-	font-family: HK Grotesk Regular, sans-serif;
-	font-size: 18px;
-	line-height: 30px;
-	color: #151951;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 17px;
+  line-height: 32px;
+  color: #151951;
 }
 
 code {
-	font-size: 16px;
-	color: #cb33b1;
+  font-size: 16px;
+  color: #cb33b1;
 }
 
 ::selection {
-	background-color: #e1ebff;
+  background-color: #e1ebff;
 }
-
-
