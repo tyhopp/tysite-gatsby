@@ -19,6 +19,10 @@ class Layout extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0, viewport-fit=cover"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Fira+Sans"
+            rel="stylesheet"
+          />
         </Helmet>
         {selectFavicon(this.props.location)}
         <Header location={this.props.location} />
