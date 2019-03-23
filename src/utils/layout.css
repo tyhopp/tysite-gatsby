@@ -46,7 +46,6 @@ code {
 
 .gatsby-highlight {
   background-color: #011627;
-  border-radius: 0.5em;
   margin: 0.5em 0;
   overflow: auto;
 }
@@ -54,7 +53,7 @@ code {
 .gatsby-highlight pre[class*='language-'] {
   background-color: transparent;
   margin: 0;
-  padding: 1.5em;
+  padding: 2em 1em;
   overflow: initial;
 }
 
