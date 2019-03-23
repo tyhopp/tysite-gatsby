@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3bea723-3b13-4f5a-899b-d567a2147fa6/deploy-status)](https://app.netlify.com/sites/tysite-v3/deploys)
+
 # Tysite v3
 
 A blog and portfolio by Ty Hopp.
