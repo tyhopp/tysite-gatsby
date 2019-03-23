@@ -126,7 +126,7 @@ class Blog extends React.Component {
             <meta name="title" content="Blog | Ty Hopp" />
             <meta
               name="description"
-              content="Technical articles about software development and design."
+              content="Technical articles about software design and development."
             />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="Ty Hopp" />
@@ -145,7 +145,7 @@ class Blog extends React.Component {
           <Block>
             <TextXL center>Blog</TextXL>
             <TextM center padding="1em" style={{ maxWidth: 300 }}>
-              Technical articles about software development and design.
+              Technical articles about software design and development.
             </TextM>
           </Block>
           <Block>
