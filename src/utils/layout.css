@@ -37,7 +37,7 @@ p {
   font-family: 'Fira Sans', sans-serif;
   font-size: 17px;
   line-height: 32px;
-  color: #151951;
+  color: #011627;
 }
 
 code {
@@ -45,7 +45,7 @@ code {
 }
 
 .gatsby-highlight {
-  background-color: #f8fafe;
+  background-color: #011627;
   border-radius: 0.5em;
   margin: 0.5em 0;
   overflow: auto;
@@ -64,6 +64,10 @@ code {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.gatsby-highlight ::selection {
+  background-color: #57a1dd;
 }
 
 ::selection {
