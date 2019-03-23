@@ -35,10 +35,10 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-embed-gist',
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              username: 'tyhopp',
-              includeDefaultCss: true,
+              inlineCodeMarker: '^',
+              noInlineHighlight: false,
             },
           },
         ],
