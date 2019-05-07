@@ -27,7 +27,7 @@ class Layout extends React.Component {
         {selectFavicon(this.props.location)}
         <Header location={this.props.location} />
         {children}
-        {this.props.location.pathname === '/blog' ||
+        {this.props.location.pathname === '/notes' ||
         this.props.location.pathname === '/lists' ? null : (
           <Footer />
         )}

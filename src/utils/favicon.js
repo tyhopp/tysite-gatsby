@@ -35,7 +35,7 @@ export const selectFavicon = location => {
 		)
 
 		// If route is blog or blog post, return hand favicon
-	} else if (location.pathname.substring(0, 5) === '/blog') {
+	} else if (location.pathname.substring(0, 6) === '/notes') {
 		return (
 			<Helmet>
 				<link

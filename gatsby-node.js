@@ -39,7 +39,7 @@ const processBlogPosts = ({ graphql, actions }) => {
             const pageTemplate = path.resolve(`src/templates/blog-post.js`)
 
             createPage({
-              path: `/blog/${edge.node.slug}`,
+              path: `/notes/${edge.node.slug}`,
               component: slash(pageTemplate),
               context: {
                 id: edge.node.id,

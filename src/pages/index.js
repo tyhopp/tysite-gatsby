@@ -7,7 +7,6 @@ import Row from '../components/row'
 import TextXL from '../components/textXL'
 import TextM from '../components/textM'
 import LinkExternal from '../components/linkExternal'
-import LinkInternal from '../components/linkInternal'
 import Card from '../components/card'
 import EmojiWaveHand from '../emoji/emojiWaveHand'
 import { graphql } from 'gatsby'
@@ -31,14 +30,14 @@ class Index extends React.Component {
           <meta name="title" content="Ty Hopp" />
           <meta
             name="description"
-            content="Singapore-based software developer crafting balanced, useful experiences for people."
+            content="Singapore-based software developer building useful things for people."
           />
           <meta name="keywords" content="software, developer, designer" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Ty Hopp" />
           <meta
             property="og:description"
-            content="Singapore-based software developer crafting balanced, useful experiences for people."
+            content="Singapore-based software developer building useful things for people."
           />
           <meta property="og:url" content="https://tyhopp.com" />
           <meta
@@ -65,13 +64,11 @@ class Index extends React.Component {
               >
                 SGX
               </LinkExternal>
-              . I care about building balanced, useful products for people.
+              . I care about building useful things for people.
             </TextM>
             <TextM style={{ margin: '0 0.5em' }}>
-              Building for the web by day, I work on native app side projects by
-              night. If this sounds interesting, check out my{' '}
-              <LinkInternal to="/blog">blog</LinkInternal> or past work
-              experience below{' '}
+              Building for the web by day, I work on an iOS side project by
+              night. Here's what else I've worked on{' '}
               <span
                 role="img"
                 aria-label="Finger pointing down emoji"

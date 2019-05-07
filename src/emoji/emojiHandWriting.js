@@ -7,7 +7,7 @@ const EmojiHandWriting = () => (
 		viewBox="0 0 28 27"
 		aria-labelledby="emojiHandWriting"
 	>
-		<title id="emojiHandWriting">Blog</title>
+		<title id="emojiHandWriting">Notes</title>
 		<g fill="none">
 			<path
 				fill="#CC9200"

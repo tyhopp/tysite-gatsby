@@ -18,7 +18,7 @@ import uniq from 'lodash/uniq'
 import { graphql } from 'gatsby'
 import { light, mist, white } from '../utils/colors'
 
-class Blog extends React.Component {
+class Notes extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -122,19 +122,19 @@ class Blog extends React.Component {
       <Layout location={this.props.location}>
         <Wrapper padding="0 0 5em 0">
           <Helmet>
-            <title>Blog | Ty Hopp</title>
-            <meta name="title" content="Blog | Ty Hopp" />
+            <title>Ty Hopp</title>
+            <meta name="title" content="Ty Hopp" />
             <meta
               name="description"
-              content="Technical articles about software design and development."
+              content="Tiny scribbles, snippets and other things of note."
             />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="Ty Hopp" />
             <meta
               property="og:description"
-              content="All blog posts from Ty Hopp"
+              content="All notes from Ty Hopp"
             />
-            <meta property="og:url" content="https://tyhopp.com/blog" />
+            <meta property="og:url" content="https://tyhopp.com/notes" />
             <meta
               property="og:image"
               content="https://tyhopp.com/openGraphCard.png"
@@ -143,9 +143,9 @@ class Blog extends React.Component {
             <meta property="og:image:height" content="1200" />
           </Helmet>
           <Block>
-            <TextXL center>Blog</TextXL>
+            <TextXL center>Notes</TextXL>
             <TextM center padding="1em" style={{ maxWidth: 300 }}>
-              Technical articles about software design and development.
+              Tiny scribbles, snippets and other things of note.
             </TextM>
           </Block>
           <Block>
@@ -236,7 +236,7 @@ class Blog extends React.Component {
             {currentFilter !== ''
               ? filteredPosts.map(post => (
                   <Block key={post.node.id} margin="2em 0">
-                    <LinkInternal to={`blog/${post.node.slug}`}>
+                    <LinkInternal to={`notes/${post.node.slug}`}>
                       <TextL article>{post.node.title}</TextL>
                     </LinkInternal>
                     <TextM margin="0.25em 0">
@@ -265,7 +265,7 @@ class Blog extends React.Component {
                 ))
               : posts.map(post => (
                   <Block key={post.node.id} margin="2em 0">
-                    <LinkInternal to={`blog/${post.node.slug}`}>
+                    <LinkInternal to={`notes/${post.node.slug}`}>
                       <TextL article>{post.node.title}</TextL>
                     </LinkInternal>
                     <TextM margin="0.25em 0">
@@ -299,7 +299,7 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog
+export default Notes
 
 export const blogQuery = graphql`
   query blogPageQuery {

@@ -16,10 +16,10 @@ const Header = props => (
 			<EmojiCardBox />
 		</Box>
 		<Box
-			to="/blog"
-			title="Blog"
+			to="/notes"
+			title="Notes"
 			color={
-				props.location.pathname.substring(0, 5) === '/blog' ? light : white
+				props.location.pathname.substring(0, 6) === '/notes' ? light : white
 			}
 			style={{ borderRight: `1px solid ${gray}` }}
 		>

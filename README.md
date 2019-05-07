@@ -2,7 +2,7 @@
 
 # Tysite v3
 
-A blog and portfolio by Ty Hopp.
+A site by Ty Hopp.
 
 ## Develop
 

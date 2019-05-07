@@ -27,7 +27,7 @@ class BlogPost extends React.Component {
       <Layout location={this.props.location}>
         <div>
           <Helmet>
-            <title>Blog | Ty Hopp</title>
+            <title>Notes | Ty Hopp</title>
             <meta name="title" content={title} />
             <meta
               name="description"
@@ -49,7 +49,7 @@ class BlogPost extends React.Component {
             <meta property="og:image:height" content="1200" />
             <meta
               property="og:url"
-              content={`https://tyhopp.com/blog/${slug}`}
+              content={`https://tyhopp.com/notes/${slug}`}
             />
           </Helmet>
           <Wrapper padding="0.5em 0 2em 0">
@@ -68,7 +68,7 @@ class BlogPost extends React.Component {
                     style={{ fontSize: 15, padding: '0.5em 1.5em' }}
                   >
                     <LinkInternal
-                      to="/blog"
+                      to="/notes"
                       state={{ filterCategory: item }}
                       style={{ border: 'none' }}
                     >
@@ -106,7 +106,7 @@ class BlogPost extends React.Component {
                 <TextM>
                   If you're jazzed about this post, feel free to{' '}
                   <LinkExternal
-                    href={`https://twitter.com/intent/tweet?text=Found a nice article on ${title.toLowerCase()} ❤️&url=https://tyhopp.com/blog/${slug}&via=doestyhopp`}
+                    href={`https://twitter.com/intent/tweet?text=Found a nice article on ${title.toLowerCase()} ❤️&url=https://tyhopp.com/notes/${slug}&via=doestyhopp`}
                     target="_blank"
                     rel="noopener"
                   >
@@ -140,7 +140,7 @@ class BlogPost extends React.Component {
                 </TextM>
                 <TextM>
                   Otherwise, read more{' '}
-                  <LinkInternal to="/blog">articles</LinkInternal>!{' '}
+                  <LinkInternal to="/notes">articles</LinkInternal>!{' '}
                   <span
                     role="img"
                     aria-label="Hand writing emoji"
