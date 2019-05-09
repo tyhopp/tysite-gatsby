@@ -21,10 +21,6 @@ ol {
     max-width: 550px;
   }
 }
-#markdown ul,
-li {
-  padding: 0 2em;
-}
 #markdown div[class*='gatsby-highlight'] {
   max-width: 100%;
 }
@@ -33,6 +29,9 @@ li {
   padding-bottom: 0.1em;
   border-bottom: 1px solid #151951;
   color: #151951;
+}
+#markdown ul li {
+  margin: 0 2em;
 }
 #markdown li {
   font-size: 17px;
