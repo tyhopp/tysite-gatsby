@@ -24,6 +24,19 @@ ol {
 #markdown div[class*='gatsby-highlight'] {
   max-width: 100%;
 }
+@media (min-width: 700px) {
+  #markdown div[class*='gatsby-highlight'] {
+    max-width: 550px;
+    margin: 0.5em auto;
+    align-items: flex-start;
+    border-radius: 10px;
+  }
+
+  #markdown div[class*='gatsby-highlight'] pre {
+    align-items: flex-start;
+    padding: 2em;
+  }
+}
 #markdown a {
   text-decoration: none;
   padding-bottom: 0.1em;
