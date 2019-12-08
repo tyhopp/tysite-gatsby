@@ -88,7 +88,7 @@ class Index extends React.Component {
               >
                 the TenX website
               </LinkExternal>
-              , and{' '}
+              and{' '}
               <LinkExternal
                 href="https://myahmahsay.com"
                 target="_blank"
