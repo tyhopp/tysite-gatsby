@@ -1,6 +1,7 @@
 const { createEntries } = require('./src/scripts/entries');
 const { publishEntry } = require('./src/scripts/publish');
 const { BEAR_TO_CONTENTFUL } = process.env;
+const { format } = require('./src/utils/format');
 
 exports.handler = async event => {
 
@@ -19,9 +20,9 @@ exports.handler = async event => {
   }
 
   if (event.body) {
-    const article = JSON.parse(event.body);
+    const structuredNote = format(JSON.parse(event.body));
     try {
-      const [textEntry, containerEntry, postEntry] = await createEntries(article);
+      const [textEntry, containerEntry, postEntry] = await createEntries(structuredNote);
 
       // TODO - Refactor this using map
       await publishEntry(textEntry);
