@@ -88,7 +88,7 @@ class Index extends React.Component {
               >
                 the TenX website
               </LinkExternal>
-              ,{' '}
+              , and{' '}
               <LinkExternal
                 href="https://myahmahsay.com"
                 target="_blank"
@@ -96,14 +96,7 @@ class Index extends React.Component {
               >
                 My Ahmah Say
               </LinkExternal>
-              , and{' '}
-              <LinkExternal
-                href="https://tysite-v2.netlify.com"
-                target="_blank"
-                rel="noopener"
-              >
-                v2 of this site.
-              </LinkExternal>
+              .
             </TextM>
             <TextM style={{ margin: '0 0.5em' }}>
               I can be found around the web on{' '}
@@ -130,14 +123,7 @@ class Index extends React.Component {
               >
                 LinkedIn
               </LinkExternal>
-              .
-            </TextM>
-            <TextM margin="0 0.5em 2em 0.5em">
-              Otherwise, feel free to drop me an email at{' '}
-              <LinkExternal href="mailto:hopp.ty.c@gmail.com">
-                hopp.ty.c@gmail.com
-              </LinkExternal>{' '}
-              if it suits!
+              . Please do say hi!
             </TextM>
           </Column>
         </Wrapper>
