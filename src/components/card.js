@@ -40,7 +40,7 @@ const Card = props => {
           rel="noopener"
         >
           <Button center accent={item.accent} secondAccent={item.secondAccent}>
-            See website
+            See company
           </Button>
         </LinkExternal>
       </Block>
