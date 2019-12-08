@@ -7,3 +7,6 @@ public
 yarn.lock
 .env
 .vscode
+
+# Local Netlify folder
+.netlify

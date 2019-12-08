@@ -58,5 +58,5 @@ const processBlogPosts = ({ graphql, actions }) => {
 }
 
 exports.createPages = ({ graphql, actions }) => {
-  Promise.all([processBlogPosts({ graphql, actions })])
+  return Promise.all([processBlogPosts({ graphql, actions })])
 }
