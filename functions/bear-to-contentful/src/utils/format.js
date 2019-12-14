@@ -11,6 +11,17 @@ const parse = text => ({
 
 const format = text => {
   const { title, slug, date, description, categories, body } = parse(text);
+  console.log(`\n
+  Note details:
+  ---
+  title: ${title}
+  slug: ${slug}
+  date: ${date}
+  description: ${description}
+  categories: ${categories}
+  body: ${body.substring(1, 60)}...
+  ---
+  `);
   return {
     textEntry: {
       key: 'blockText',

@@ -33,10 +33,9 @@ const createIndividualEntry = ({ key, data }) => fetch(`${base}/${createEntryPat
   .then(res => res.json())
   .then(data => {
     if (data.sys.type === 'Error') {
-      console.log(`❌ Failed to create Contentul entry. ${data.message}`);
+      console.log(`❌ Failed to create Contentul entry.\n${JSON.stringify(data)}`);
       return;
     };
-
     return data;
   });
 
