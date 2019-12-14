@@ -8,6 +8,7 @@ p {
   margin: 1em 0;
 }
 #markdown p,
+h3,
 ul,
 ol {
   margin: 0 auto;
@@ -16,6 +17,7 @@ ol {
 }
 @media (min-width: 700px) {
   #markdown p,
+  h3,
   ul,
   ol {
     max-width: 550px;
@@ -50,7 +52,7 @@ ol {
   font-size: 17px;
   line-height: 30px;
   color: #151951;
-  padding: 0.5em 0;
+  padding: 0.25em 0;
   margin: auto;
   list-style: url('../assets/svg/darkListItem.svg');
 }
