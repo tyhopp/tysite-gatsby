@@ -2,7 +2,7 @@
 
 # Tysite
 
-A site by Ty Hopp.
+The personal site of Ty Hopp. See it live [here](https://tyhopp.com).
 
 ## Develop
 
@@ -16,12 +16,12 @@ A site by Ty Hopp.
 
 This site uses Contentful as a CMS to author content, Gatsby to build the site, and Netlify to deploy it.
 
-New posts on Contentful that are **published** or **unpublished** trigger an automatic rebuild of the website at https:/tyhopp.com.
+New posts on Contentful that are **published** or **unpublished** trigger an automatic rebuild of the website at [https://tyhopp.com](https://tyhopp.com).
 
 * Note - it may take a minute or two to see the changes reflected in the production site.
 
 ## Functions
-- [bear-to-contentful](./functions/bear-to-contentful/README.md)
+- [bear-to-contentful](./functions/bear-to-contentful/README.md), how I write in [Bear](https://bear.app) and publish with [Contentful](https://contentful.com).
 
 ## TODO
 - [ ] Refactor away from styled-components to vanilla CSS

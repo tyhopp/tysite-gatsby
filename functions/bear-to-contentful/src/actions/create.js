@@ -7,8 +7,8 @@ const fetch = require('node-fetch');
  * @param {Object} payload The raw note text to parse
  */
 const createBlogPost = async payload => {
-  const blogPost = format(JSON.parse(payload));
   try {
+    const blogPost = format(payload);
     const blogPostEntry = await createEntry(blogPost);
     await publishEntry(blogPostEntry);
     return {
@@ -16,6 +16,7 @@ const createBlogPost = async payload => {
       body: "Success"
     } 
   } catch(e) {
+    console.log(`Failed to create blog post. ${e}`);
     return {
       statusCode: 500,
       body: "Internal Server Error"
@@ -32,7 +33,7 @@ const createEntry = payload => {
   const id = payload.fields.slug['en-US']; // Use unique slug as id
   return fetch(`${base}/${path}/${id}`, {
     method: 'PUT',
-    headers: headers(key),
+    headers,
     body: JSON.stringify(data)
   })
     .then(res => {

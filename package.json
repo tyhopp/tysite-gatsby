@@ -2,7 +2,7 @@
   "name": "tysite",
   "description": "Singapore-based software developer crafting balanced, useful experiences for people.",
   "version": "1.0.0",
-  "author": "Ty Hopp <hopp.ty.c@gmail.com>",
+  "author": "Ty Hopp",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.18",
