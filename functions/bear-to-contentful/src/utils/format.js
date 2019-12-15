@@ -19,7 +19,7 @@ const parse = text => {
        date: /date: (.*?)\\n/.exec(trimmedText)[1],
        description: /description: (.*?)\\n/.exec(trimmedText)[1],
        categories,
-       body: trimmedText.substring(/#(.*)---/s.exec(trimmedText)[1].length + 4)
+       body: trimmedText.substring(/#(.*)---/s.exec(trimmedText)[1].length + 5)
      };
 }
 
