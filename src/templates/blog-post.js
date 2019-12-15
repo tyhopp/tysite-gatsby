@@ -5,8 +5,6 @@ import Wrapper from '../components/wrapper'
 import Content from '../components/content'
 import TextL from '../components/textL'
 import TextM from '../components/textM'
-// import TextS from '../components/textS'
-// import Img from 'gatsby-image'
 import LinkInternal from '../components/linkInternal'
 import LinkExternal from '../components/linkExternal'
 import Button from '../components/button'
@@ -21,7 +19,7 @@ class BlogPost extends React.Component {
     const page = this.props.data.allContentfulBlogPost.edges // returns array of Blog Post children
 
     const { title, date, slug, shortDescription, category } = page[0].node
-    const content = page[0].node.content.content
+    const body = page[0].node.body
 
     return (
       <Layout location={this.props.location}>
@@ -78,19 +76,7 @@ class BlogPost extends React.Component {
                 ))}
               </Filter>
             </Content>
-            {content &&
-              content.map(block => (
-                <div key={block.id}>
-                  {block.body && (
-                    <div
-                      id="markdown"
-                      dangerouslySetInnerHTML={{
-                        __html: block.body.childMarkdownRemark.html,
-                      }}
-                    />
-                  )}
-                </div>
-              ))}
+            <div id="markdown" dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}v/>
             <Column>
               <Tile>
                 <TextM center medium>
@@ -173,20 +159,9 @@ export const blogPostQuery = graphql`
             shortDescription
           }
           category
-          content {
-            id
-            ... on ContentfulContainer {
-              content {
-                ... on ContentfulBlockText {
-                  id
-                  body {
-                    id
-                    childMarkdownRemark {
-                      html
-                    }
-                  }
-                }
-              }
+          body {
+            childMarkdownRemark {
+              html
             }
           }
         }

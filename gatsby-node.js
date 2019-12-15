@@ -34,7 +34,7 @@ const processBlogPosts = ({ graphql, actions }) => {
           result.data.allContentfulBlogPost.edges,
           'node.contentful_id'
         ),
-        (edges, contentfulId) => {
+        edges => {
           _.each(edges, edge => {
             const pageTemplate = path.resolve(`src/templates/blog-post.js`)
 
@@ -45,8 +45,7 @@ const processBlogPosts = ({ graphql, actions }) => {
                 id: edge.node.id,
                 contentfulId: edge.node.contentful_id,
                 title: edge.node.title,
-                slug: edge.node.slug,
-                content: edge.node.content,
+                slug: edge.node.slug
               },
             })
           })
