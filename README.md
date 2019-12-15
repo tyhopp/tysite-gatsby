@@ -19,3 +19,15 @@ This site uses Contentful as a CMS to author content, Gatsby to build the site, 
 New posts on Contentful that are **published** or **unpublished** trigger an automatic rebuild of the website at https:/tyhopp.com.
 
 * Note - it may take a minute or two to see the changes reflected in the production site.
+
+## Functions
+- [bear-to-contentful](./functions/bear-to-contentful/README.md)
+
+## TODO
+- [ ] Refactor away from styled-components to vanilla CSS
+- [ ] Simplify CSS across entire site
+- [ ] Add support for iOS dark mode
+- [ ] Add unit tests for mission-critical components
+- [ ] Refactor gatsby-browser code
+- [ ] Upgrade dependencies
+- [ ] Update prettier to use semicolons

@@ -95,9 +95,7 @@ module.exports = {
                   guid: edge.node.id,
                   custom_elements: [
                     {
-                      'content:encoded': edge.node.content.content.map(
-                        block => block.body.childMarkdownRemark.html
-                      ),
+                      'body:encoded': edge.node.body.childMarkdownRemark.html
                     },
                   ],
                 })
@@ -116,21 +114,11 @@ module.exports = {
 												shortDescription
 											}
 											category
-											content {
-												... on ContentfulContainer {
-													content {
-														... on ContentfulBlockText {
-															id
-															body {
-																id
-																childMarkdownRemark {
-																	html
-																}
-															}
-														}
-													}
-												}
-											}
+											body {
+                        childMarkdownRemark {
+                          html
+                        }
+                      }
 										}
 									}
 								}
