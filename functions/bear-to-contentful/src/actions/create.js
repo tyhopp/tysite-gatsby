@@ -34,7 +34,7 @@ const createEntry = payload => {
   return fetch(`${base}/${path}/${id}`, {
     method: 'PUT',
     headers,
-    body: JSON.stringify(data)
+    body: JSON.stringify(payload)
   })
     .then(res => {
       try {
