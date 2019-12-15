@@ -14,29 +14,11 @@ exports.handler = async event => {
     };
   }
 
-  let data;
-
-  // Parse payload if it's base64 encoded
-  if (event.isBase64Encoded) {
-    try {
-      const buffer = Buffer.from(event.body, 'base64');
-      data = buffer.toString();
-    } catch(e) {
-      console.log(`Failed to parse base64 payload. ${e}`);
-      return {
-        statusCode: 500,
-        body: "Internal Server Error"
-      };
-    }
-  } else {
-    data = JSON.parse(event.body);
-  }
-
   // Parse method and take appropriate action
   switch(event.httpMethod) {
     case 'POST':
     case 'PUT':
-      return createBlogPost(data);
+      return createBlogPost(JSON.parse(event.body));
     default:
       return {
         statusCode: 405,

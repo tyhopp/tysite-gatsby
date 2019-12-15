@@ -20,3 +20,5 @@ If the project dies, it doesn't kill the port. Do so manually:
 2. kill -9 PID
 
 Netlify dev only supports POST invocations from the command line.
+
+*Make sure you set the 'Content-Type': 'application/json' header on your request, otherwise AWS API Gateway may convert your payload to base64*.
