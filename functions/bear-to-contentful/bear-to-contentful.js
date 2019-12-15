@@ -1,17 +1,12 @@
-const { createEntries } = require('./src/scripts/entries');
-const { publishEntry } = require('./src/scripts/publish');
+const { createBlogPost } = require('./src/actions/create');
 const { BEAR_TO_CONTENTFUL } = process.env;
-const { format } = require('./src/utils/format');
 
+/**
+ * A lambda function to create/update and publish blog posts in Contentful.
+ */
 exports.handler = async event => {
 
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: "Method Not Allowed"
-    };
-  }
-
+  // Ensure credentials are passed
   if (!event.headers['bear-to-contentful'] || (event.headers['bear-to-contentful'] !== BEAR_TO_CONTENTFUL)) {
     return {
       statusCode: 401,
@@ -19,29 +14,16 @@ exports.handler = async event => {
     };
   }
 
-  if (event.body) {
-    const structuredNote = format(JSON.parse(event.body));
-    try {
-      const [textEntry, containerEntry, postEntry] = await createEntries(structuredNote);
-
-      // TODO - Refactor this using map
-      await publishEntry(textEntry);
-      await publishEntry(containerEntry);
-      await publishEntry(postEntry);
+  // Parse method and take appropriate action
+  switch(event.httpMethod) {
+    case 'POST':
+    case 'PUT':
+      createBlogPost(event.body);
+      break;
+    default:
       return {
-        statusCode: 200,
-        body: "Success"
-      } 
-    } catch(e) {
-      return {
-        statusCode: 500,
-        body: "Internal Server Error"
-      }
-    }
-  } else {
-    return {
-      statusCode: 400,
-      body: "Bad Request"
-    };
+        statusCode: 405,
+        body: "Method Not Allowed"
+      };
   }
 };

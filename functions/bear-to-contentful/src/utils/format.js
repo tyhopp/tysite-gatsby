@@ -1,5 +1,7 @@
-// Takes plain text and formats to required structure for Contentful
-
+/**
+ * Parses the input markdown and returns as an object.
+ * @param {string} text the raw markdown to process
+ */
 const parse = text => ({
   title: /# (.*?)\n/.exec(text)[1],
   slug: /slug: (.*?)\n/.exec(text)[1],
@@ -9,6 +11,10 @@ const parse = text => ({
   body: text.substring(/#(.*)---/s.exec(text)[1].length + 4)
 });
 
+/**
+ * Formats a flat object into desired Contentful payload.
+ * @param {string} text the raw markdown to process
+ */
 const format = text => {
   const { title, slug, date, description, categories, body } = parse(text);
   console.log(`\n
@@ -23,43 +29,13 @@ const format = text => {
   ---
   `);
   return {
-    textEntry: {
-      key: 'blockText',
-      data: {
-        'fields': {
-          'body': { 'en-US': body }
-        }
-      }
-    },
-    containerEntry: {
-      key: 'container',
-      data: {
-        'fields': {
-          'title': { 'en-US': 'Content' },
-          'content': {
-            'en-US': [
-              { 'sys': { type: 'Link', linkType: 'Entry' } }
-            ]
-          }
-        }
-      }
-    },
-    postEntry: {
-      key: 'blogPost',
-      data: {
-        'fields': {
-          'title': { 'en-US': title },
-          'slug': { 'en-US': slug },
-          'date': { 'en-US': date },
-          'shortDescription': { 'en-US': description },
-          'category': { 'en-US': categories },
-          'content': {
-            'en-US': {
-              'sys': { type: 'Link', linkType: 'Entry' }
-            }
-          }
-        }
-      }
+    'fields': {
+      'title': { 'en-US': title },
+      'slug': { 'en-US': slug },
+      'date': { 'en-US': date },
+      'shortDescription': { 'en-US': description },
+      'category': { 'en-US': categories },
+      'body': { 'en-US': body }
     }
   }
 };
