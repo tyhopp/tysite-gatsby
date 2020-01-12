@@ -28,6 +28,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-relative-links',
+            options: {
+              domainRegex: /http[s]*:\/\/[www.]*tyhopp\.com[/]?/,
+            }
+          },
+          {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
