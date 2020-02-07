@@ -9,7 +9,6 @@ import LinkExternal from './linkExternal'
 import Block from './block'
 import Column from './column'
 import { gray } from '../utils/colors'
-import '../utils/markdown.css'
 
 const Card = props => {
   const item = props.item.node
@@ -26,9 +25,9 @@ const Card = props => {
         <TextM center style={{ maxWidth: '172px' }}>
           {item.position}
         </TextM>
-        <List id={item.title}>
+        <List class={item.title}>
           {item.bullets.content.map(bullet => (
-            <Bullet key={bullet.id} id={bullet.id}>
+            <Bullet key={bullet.id} className={bullet.id}>
               {bullet.body.body}
             </Bullet>
           ))}

@@ -9,7 +9,6 @@ import LinkExternal from './linkExternal'
 import Block from './block'
 import Column from './column'
 import { gray } from '../utils/colors'
-import '../utils/markdown.css'
 
 const Card = props => {
   const item = props.item.node

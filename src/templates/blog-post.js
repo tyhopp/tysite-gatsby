@@ -11,7 +11,6 @@ import Button from '../components/button'
 import Column from '../components/column'
 import Tile from '../components/tile'
 import Filter from '../components/filter'
-import '../utils/markdown.css'
 import { graphql } from 'gatsby'
 
 class BlogPost extends React.Component {
@@ -76,7 +75,7 @@ class BlogPost extends React.Component {
                 ))}
               </Filter>
             </Content>
-            <div id="markdown" dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}v/>
+            <div className="blog-post" dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}v/>
             <Column>
               <Tile>
                 <TextM center medium>

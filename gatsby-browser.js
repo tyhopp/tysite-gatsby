@@ -1,1 +1,2 @@
-import './src/utils/prism.css'
+import './src/styles/main.css'
+import './src/styles/prism.css'

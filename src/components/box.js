@@ -14,6 +14,7 @@ const Box = styled(Link)`
 	border-left: 1px solid ${gray};
 	cursor: pointer;
 	background-color: ${props => (props.color ? props.color : white)};
+	border-bottom: none;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 	${media.tab`
