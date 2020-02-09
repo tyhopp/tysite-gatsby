@@ -28,7 +28,7 @@ ty-header {
 	width: 33.33%;
 	border-left: 1px solid var(--line);
 	cursor: pointer;
-	background-color: #FFF;
+	background-color: var(--background);
 	border-bottom: none;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -38,11 +38,11 @@ ty-header {
 }
 
 .ty-header-nav:hover {
-  background-color: var(--primaryTint);
+  background-color: var(--primary-tint);
 }
 
 .ty-header-nav:active {
-  background-color: var(--secondaryTint);
+  background-color: var(--secondary-tint);
 }
 
 @media (min-width: 700px) {

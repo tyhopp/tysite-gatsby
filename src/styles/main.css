@@ -12,11 +12,22 @@
 
 :root {
   --text: #151951;
-  --primaryTint: #F8FAFE;
-  --secondaryTint: #E1EBFF;
+  --primary-tint: #F8FAFE;
+  --secondary-tint: #E1EBFF;
   --line: #ECECF5;
   --background: #FFFFFF;
   --code: #011627;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #FFFFFF;
+    --primary-tint: #10144b;
+    --secondary-tint: #1e225c;
+    --line: #424464;
+    --background: #01111f;
+    --code: #00080f;
+  }
 }
 
 html,
@@ -57,22 +68,22 @@ a:visited {
 li {
   padding: 0.25em 0;
   margin: auto;
-  list-style: url('../assets/svg/darkListItem.svg');
+  list-style: url('../assets/svg/list-item-light.svg');
 }
 
 .flyright li {
   margin: 0 2em;
-  list-style: url('../assets/svg/purpleListItem.svg');
+  list-style: url('../assets/svg/list-item-purple.svg');
 }
 
 .edenspiekermann li {
   margin: 0 2em;
-  list-style: url('../assets/svg/redListItem.svg');
+  list-style: url('../assets/svg/list-item-red.svg');
 }
 
 .bytedance li {
   margin: 0 2em;
-  list-style: url('../assets/svg/blueListItem.svg');
+  list-style: url('../assets/svg/list-item-blue.svg');
 }
 
 .blog-post {
