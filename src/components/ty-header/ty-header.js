@@ -1,4 +1,5 @@
 import template from './ty-header.html';
+import './ty-header.css';
 
 class TyHeader extends HTMLElement {
 

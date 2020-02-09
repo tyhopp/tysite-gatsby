@@ -5,7 +5,7 @@ function enableGetTemplateMethod(template) {
 function enablePushStateNavigation() {
   document.addEventListener('click', e => {
     const anchor = e.target.closest('a');
-    if (anchor && anchor.target !== 'blank') {
+    if (anchor && anchor.target !== '_blank') {
       e.preventDefault();
       const state = anchor.state
         ? JSON.parse(anchor.state)

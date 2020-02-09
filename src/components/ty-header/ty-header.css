@@ -8,8 +8,8 @@ ty-header {
   align-items: center;
   height: 54px;
   width: 100%;
-  background-color: #FFF;
-  border-bottom: 1px solid #ECECF5;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--line);
 }
 
 @media (min-width: 990px) {
@@ -26,7 +26,7 @@ ty-header {
 	padding: 0 2.5em;
 	height: 54px;
 	width: 33.33%;
-	border-left: 1px solid #ECECF5;
+	border-left: 1px solid var(--line);
 	cursor: pointer;
 	background-color: #FFF;
 	border-bottom: none;
@@ -34,15 +34,15 @@ ty-header {
 }
 
 .ty-header-nav:last-of-type {
-  border-right: 1px solid #ECECF5;
+  border-right: 1px solid var(--line);
 }
 
 .ty-header-nav:hover {
-  background-color: #F8FAFE;
+  background-color: var(--primaryTint);
 }
 
 .ty-header-nav:active {
-  background-color: #E1EBFF;
+  background-color: var(--secondaryTint);
 }
 
 @media (min-width: 700px) {

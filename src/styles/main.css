@@ -10,6 +10,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --text: #151951;
+  --primaryTint: #F8FAFE;
+  --secondaryTint: #E1EBFF;
+  --line: #ECECF5;
+  --background: #FFFFFF;
+  --code: #011627;
+}
+
 html,
 body {
   position: relative;
@@ -21,9 +30,10 @@ body {
   font-family: 'Fira Sans', sans-serif;
   font-size: 17px;
   line-height: 30px;
-  color: #151951;
+  color: var(--text);
   font-weight: normal;
   margin: 0;
+  background-color: var(--background);
 }
 
 h1,
@@ -36,12 +46,12 @@ h3 {
 a {
   text-decoration: none;
   padding-bottom: 0.1em;
-  border-bottom: 1px solid #151951;
+  border-bottom: 1px solid var(--text);
 }
 
 a:link,
 a:visited {
-  color: #151951;
+  color: var(--text);
 }
 
 li {
@@ -77,7 +87,7 @@ li {
 }
 
 .gatsby-highlight {
-  background-color: #011627;
+  background-color: var(--code);
   max-width: 100%;
   margin: 0.5em 0;
   overflow: auto;
@@ -111,16 +121,8 @@ li {
   }
 }
 
-.gatsby-highlight ::selection {
-  background-color: #57a1dd;
-}
-
-::selection {
-  background-color: #e1ebff;
-}
-
 blockquote {
-  border-left: 2px solid #ececf5;
+  border-left: 2px solid var(--line);
   max-width: 300px;
   margin: 1em auto;
 }

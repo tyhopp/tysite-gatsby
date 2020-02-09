@@ -2,9 +2,8 @@
 import './src/styles/main.css';
 import './src/styles/prism.css';
 
-// Component styles
+// Components
 import './src/components/ty-header/ty-header.js';
-import './src/components/ty-header/ty-header.css';
 
 // App level DOM adjustment
 import {
