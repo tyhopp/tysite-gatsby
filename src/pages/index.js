@@ -1,21 +1,58 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import Wrapper from '../components/wrapper'
-import Column from '../components/column'
-import Row from '../components/row'
-import TextXL from '../components/textXL'
-import TextM from '../components/textM'
-import LinkExternal from '../components/linkExternal'
-import Card from '../components/card'
-import EmojiWaveHand from '../emoji/emojiWaveHand'
-import { graphql } from 'gatsby'
+import React, { Component } from 'react';
+import Layout from '../components/layout';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import emojiWaveHand from '../assets/svg/emoji-wave-hand.svg';
+import './index.css';
 
-class Index extends React.Component {
+class Index extends Component {
+  constructor() {
+    super();
+    this._onTitleHover = this._onTitleHover.bind(this);
+    this._onTitleEmojiAnimationEnd = this._onTitleEmojiAnimationEnd.bind(this);
+  }
+
+  componentDidMount() {
+    this._title = document.querySelector('.index-title');
+    this._titleEmoji = document.querySelector('.index-title-emoji');
+    this._setData();
+    this._setListeners(true);
+  }
+
+  componentWillUnmount() {
+    this._setListeners(false)
+  }
+
+  _setData() {
+    const cards = document.querySelector('.index-cards');
+    this._data.forEach(item => {
+      const cardData = { ...item?.node, link: {
+        href: item?.node.link,
+        text: 'See company',
+        accent: item?.node.accent
+      }};
+      const card = document.createElement('ty-card');
+      cards.appendChild(card);
+      card.setData(cardData);
+    });
+  }
+
+  _setListeners(flag) {
+    const fnName = flag ? 'addEventListener': 'removeEventListener';
+    this._title[fnName]('mouseover', this._onTitleHover);
+    this._titleEmoji[fnName]('animationend', this._onTitleEmojiAnimationEnd);
+  }
+
+  _onTitleHover() {
+    this._titleEmoji.classList.add('index-title-emoji--wave');
+  }
+
+  _onTitleEmojiAnimationEnd() {
+    this._titleEmoji.classList.remove('index-title-emoji--wave');
+  }
 
   render() {
-    const items = this.props.data.allContentfulPortfolioItem.edges
-    // const map = this.props.data.map
+    this._data = this.props.data?.allContentfulPortfolioItem?.edges || [];
 
     return (
       <Layout location={this.props.location}>
@@ -43,84 +80,37 @@ class Index extends React.Component {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:creator" content="@doestyhopp" />
         </Helmet>
-        <Wrapper padding="0 1em">
-          <Column margin="0 auto" style={{ maxWidth: 440 }}>
-            <Row center margin="0 0 1em 0">
-              <TextXL margin="0 0.25em 0 0">Hi, I'm Ty</TextXL>
-              <EmojiWaveHand />
-            </Row>
-            <TextM style={{ margin: '0 0.5em' }}>
-              I’m a Singapore-based software developer currently working at{' '}
-              <LinkExternal
-                href="https://sgx.com"
-                target="_blank"
-                rel="noopener"
-              >
-                SGX
-              </LinkExternal>
-              . I care about building useful things for people.
-            </TextM>
-            <TextM style={{ margin: '0 0.5em' }}>
-              Building for the web by day, I work on an iOS side project by
-              night. Here's what else I've worked on{' '}
-              <span
-                role="img"
-                aria-label="Finger pointing down emoji"
-                style={{ fontSize: 20 }}
-              >
-                👇
-              </span>
-            </TextM>
-            {items &&
-              items.map(item => <Card item={item} key={item.node.id} />)}
-            <TextM style={{ margin: '0 0.5em' }}>
-              Other things I've built include{' '}
-              <LinkExternal
-                href="https://tenx.tech"
-                target="_blank"
-                rel="noopener"
-              >
-                the TenX website
-              </LinkExternal>
-              {' '}and{' '}
-              <LinkExternal
-                href="https://myahmahsay.com"
-                target="_blank"
-                rel="noopener"
-              >
-                My Ahmah Say
-              </LinkExternal>
-              .
-            </TextM>
-            <TextM style={{ margin: '0 0.5em' }}>
-              I can be found around the web on{' '}
-              <LinkExternal
-                href="https://twitter.com/doestyhopp"
-                target="_blank"
-                rel="noopener"
-              >
-                Twitter
-              </LinkExternal>
-              ,{' '}
-              <LinkExternal
-                href="https://github.com/tyhopp"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub
-              </LinkExternal>
-              , and{' '}
-              <LinkExternal
-                href="https://www.linkedin.com/in/tyhopp"
-                target="_blank"
-                rel="noopener"
-              >
-                LinkedIn
-              </LinkExternal>
-              . Please do say hi!
-            </TextM>
-          </Column>
-        </Wrapper>
+        <main class="index">
+          <h1 class="index-title">
+            Hi, I'm Ty
+            <img class="index-title-emoji" src={emojiWaveHand} alt="Wave hand emoji"></img>
+          </h1>
+          <p class="index-description">
+            I’m a Singapore-based software developer currently working at{' '}
+            <a href="https://sgx.com" target="_blank" rel="noopener noreferrer">SGX</a>.
+            I care about building useful things for people.
+          </p>
+          <p class="index-description">
+            Building for the web by day, I work on an iOS side project by night. Here's what else I've worked on{' '}
+            <span class="index-description-emoji" role="img" aria-label="Finger pointing down emoji">
+              👇
+            </span>
+          </p>
+          <div class="index-cards"></div>
+          <p class="index-description">
+            Other things I've built include&nbsp;
+            <a href="https://tenx.tech" target="_blank" rel="noopener noreferrer">the TenX website</a>
+            &nbsp;and&nbsp;
+            <a href="https://myahmahsay.com" target="_blank" rel="noopener noreferrer">My Ahmah Say</a>.
+          </p>
+          <p class="index-description">
+            I can be found around the web on&nbsp;
+            <a href="https://twitter.com/doestyhopp" target="_blank" rel="noopener noreferrer">Twitter</a>,&nbsp;
+            <a href="https://github.com/tyhopp" target="_blank" rel="noopener noreferrer">GitHub</a>, and&nbsp;
+            <a href="https://www.linkedin.com/in/tyhopp" target="_blank" rel="noopener noreferrer">LinkedIn</a>.&nbsp;
+            Please do say hi!
+          </p>
+        </main>
       </Layout>
     )
   }
@@ -139,8 +129,14 @@ export const indexQuery = graphql`
           order
           link
           accent
-          secondAccent
           logo {
+            id
+            description
+            file {
+              url
+            }
+          }
+          darkLogo {
             id
             description
             file {

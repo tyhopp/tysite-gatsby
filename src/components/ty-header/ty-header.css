@@ -18,6 +18,10 @@ ty-header {
   }
 }
 
+a.ty-header-nav--current {
+  background-color: var(--primary-tint);
+}
+
 .ty-header-nav {
   display: flex;
 	flex-direction: column;

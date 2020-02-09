@@ -2,6 +2,15 @@ function enableGetTemplateMethod(template) {
   document.getTemplate = template => document.createRange().createContextualFragment(template).firstElementChild.content;
 }
 
+function enableDarkModeFlag() {
+  const colorSchemePreference = window.matchMedia('(prefers-color-scheme: dark)');
+  const html = document.querySelector('html');
+  html.dataset.theme = colorSchemePreference.matches ? 'dark' : 'light';
+  colorSchemePreference.addListener(e => {
+    html.dataset.theme = e.matches ? 'dark' : 'light';
+  });
+}
+
 function enablePushStateNavigation() {
   document.addEventListener('click', e => {
     const anchor = e.target.closest('a');
@@ -17,5 +26,6 @@ function enablePushStateNavigation() {
 
 export {
   enableGetTemplateMethod,
+  enableDarkModeFlag,
   enablePushStateNavigation
 }
