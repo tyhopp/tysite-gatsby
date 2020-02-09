@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Helmet from 'react-helmet'
-import Header from '../components/header'
 import Footer from '../components/footer'
 import { selectFavicon } from '../utils/favicon'
 
@@ -24,7 +23,7 @@ class Layout extends React.Component {
           />
         </Helmet>
         {selectFavicon(this.props.location)}
-        <Header location={this.props.location} />
+        <ty-header></ty-header>
         {children}
         {this.props.location.pathname === '/notes' ||
         this.props.location.pathname === '/lists' ? null : (

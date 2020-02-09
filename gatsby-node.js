@@ -59,3 +59,21 @@ const processBlogPosts = ({ graphql, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   return Promise.all([processBlogPosts({ graphql, actions })])
 }
+
+exports.onCreateWebpackConfig = ({
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.html$/,
+          loader: 'html-loader',
+          options: {
+            minimize: false,
+          },
+        },
+      ],
+    },
+  })
+}

@@ -8,6 +8,7 @@ import { gray, light, white } from '../utils/colors'
 
 const Header = props => (
 	<Container>
+		<Link to="/" title="Work" className=""></Link>
 		<Box
 			to="/"
 			title="Work"

@@ -12,12 +12,6 @@ import EmojiWaveHand from '../emoji/emojiWaveHand'
 import { graphql } from 'gatsby'
 
 class Index extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      // none yet
-    }
-  }
 
   render() {
     const items = this.props.data.allContentfulPortfolioItem.edges

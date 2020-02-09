@@ -25,7 +25,7 @@ const Card = props => {
         <TextM center style={{ maxWidth: '172px' }}>
           {item.position}
         </TextM>
-        <List class={item.title}>
+        <List className={item.title}>
           {item.bullets.content.map(bullet => (
             <Bullet key={bullet.id} className={bullet.id}>
               {bullet.body.body}

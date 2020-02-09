@@ -64,13 +64,9 @@ class BlogPost extends React.Component {
                     key={item}
                     style={{ fontSize: 15, padding: '0.5em 1.5em' }}
                   >
-                    <LinkInternal
-                      to="/notes"
-                      state={{ filterCategory: item }}
-                      style={{ border: 'none' }}
-                    >
+                    <a href="/notes" state="{ filterCategory: JavaScript }">
                       {item}
-                    </LinkInternal>
+                    </a>
                   </Button>
                 ))}
               </Filter>
