@@ -22,7 +22,7 @@ class Layout extends React.Component {
             rel="stylesheet"
           />
         </Helmet>
-        {selectFavicon(this.props.location)}
+        {/* {selectFavicon(this.props.location)} */}
         <ty-header></ty-header>
         {children}
         {this.props.location.pathname === '/notes' ||

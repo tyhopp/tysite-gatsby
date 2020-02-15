@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Layout from '../components/layout';
-import Helmet from 'react-helmet';
+import waveHandEmoji from '../assets/svg/emoji-wave-hand.svg';
 import { graphql } from 'gatsby';
-import emojiWaveHand from '../assets/svg/emoji-wave-hand.svg';
 import './index.css';
 
 class Index extends Component {
@@ -27,9 +25,9 @@ class Index extends Component {
     const cards = document.querySelector('.index-cards');
     this._data.forEach(item => {
       const cardData = { ...item?.node, link: {
-        href: item?.node.link,
+        href: item?.node?.link,
         text: 'See company',
-        accent: item?.node.accent
+        accent: item?.node?.accent
       }};
       const card = document.createElement('ty-card');
       cards.appendChild(card);
@@ -55,35 +53,13 @@ class Index extends Component {
     this._data = this.props.data?.allContentfulPortfolioItem?.edges || [];
 
     return (
-      <Layout location={this.props.location}>
-        <Helmet>
-          <title>Ty Hopp</title>
-          <meta name="title" content="Ty Hopp" />
-          <meta
-            name="description"
-            content="Singapore-based software developer building useful things for people."
-          />
-          <meta name="keywords" content="software, developer, designer" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Ty Hopp" />
-          <meta
-            property="og:description"
-            content="Singapore-based software developer building useful things for people."
-          />
-          <meta property="og:url" content="https://tyhopp.com" />
-          <meta
-            property="og:image"
-            content="https://tyhopp.com/openGraphCard.png"
-          />
-          <meta property="og:image:width" content="2400" />
-          <meta property="og:image:height" content="1200" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content="@doestyhopp" />
-        </Helmet>
-        <main class="index">
+      <main>
+        <ty-head></ty-head>
+        <ty-header></ty-header>
+        <section class="index">
           <h1 class="index-title">
             Hi, I'm Ty
-            <img class="index-title-emoji" src={emojiWaveHand} alt="Wave hand emoji"></img>
+            <img class="index-title-emoji" src={waveHandEmoji} alt="Wave hand emoji"></img>
           </h1>
           <p class="index-description">
             I’m a Singapore-based software developer currently working at{' '}
@@ -110,8 +86,8 @@ class Index extends Component {
             <a href="https://www.linkedin.com/in/tyhopp" target="_blank" rel="noopener noreferrer">LinkedIn</a>.&nbsp;
             Please do say hi!
           </p>
-        </main>
-      </Layout>
+        </section>
+      </main>
     )
   }
 }
@@ -157,4 +133,4 @@ export const indexQuery = graphql`
       }
     }
   }
-`
+`;

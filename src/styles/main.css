@@ -10,7 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
+html {
   --text: #151951;
   --primary-tint: #F8FAFE;
   --secondary-tint: #E1EBFF;
@@ -19,15 +19,13 @@
   --code: #011627;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #FFFFFF;
-    --primary-tint: #10144b;
-    --secondary-tint: #1e225c;
-    --line: #424464;
-    --background: #01111f;
-    --code: #00080f;
-  }
+html[data-theme=dark] {
+  --text: #FFFFFF;
+  --primary-tint: #10144b;
+  --secondary-tint: #1e225c;
+  --line: #424464;
+  --background: #01111f;
+  --code: #00080f;
 }
 
 html,

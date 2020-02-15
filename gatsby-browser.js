@@ -3,6 +3,7 @@ import './src/styles/main.css';
 import './src/styles/prism.css';
 
 // Components
+import './src/components/ty-head/ty-head.js';
 import './src/components/ty-header/ty-header.js';
 import './src/components/ty-card/ty-card.js';
 
