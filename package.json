@@ -1,8 +1,9 @@
 {
-  "name": "tysite",
+  "name": "tysite-gatsby",
   "description": "Singapore-based software developer crafting balanced, useful experiences for people.",
   "version": "1.0.0",
   "author": "Ty Hopp",
+  "license": "MIT",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "dotenv": "^8.2.0",
